@@ -12,6 +12,7 @@ using casaDeShows.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using casaDeShows.Repositorios;
 
 namespace casaDeShows
 {
@@ -33,8 +34,11 @@ namespace casaDeShows
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDbContext<ApplicationDbContextEntidades>(options=>options.UseMySql(Configuration.GetConnectionString("DefaultConnectionEntidade")));
+            services.AddTransient<EventoRepositorio>();
+            services.AddTransient<CasaDeShowRepositorio>();
             services.AddControllersWithViews();
-           services.AddRazorPages();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
