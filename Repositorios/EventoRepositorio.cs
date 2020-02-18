@@ -17,9 +17,6 @@ namespace casaDeShows.Repositorios
         public List<Evento> MostrarEventos(){
             return _dataBase.Eventos.ToList();
         }
-        public List<GeneroEvento> MostrarGenerosEventos(){
-            return _dataBase.GeneroEventos.ToList();
-        }
         //Chamar o list de casa de show no controller
         
         //Methodos para busca de objetos 
@@ -44,7 +41,7 @@ namespace casaDeShows.Repositorios
             _dataBase.Eventos.Update(editaEvento);
             _dataBase.SaveChanges();
         }
-        public void DeletarEventos(Evento deletaEvento){
+        public void DeletarEvento(Evento deletaEvento){
             _dataBase.Eventos.Remove(deletaEvento);
             _dataBase.SaveChanges();
         }

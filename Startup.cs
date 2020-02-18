@@ -37,6 +37,7 @@ namespace casaDeShows
             services.AddDbContext<ApplicationDbContextEntidades>(options=>options.UseMySql(Configuration.GetConnectionString("DefaultConnectionEntidade")));
             services.AddTransient<EventoRepositorio>();
             services.AddTransient<CasaDeShowRepositorio>();
+            services.AddTransient<GenerosRepositorio>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

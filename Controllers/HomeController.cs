@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using casaDeShows.Models;
+using casaDeShows.Repositorios;
 
 namespace casaDeShows.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly EventoRepositorio _eventoRepositorio;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, EventoRepositorio eventoRepositorio)
         {
             _logger = logger;
+            _eventoRepositorio = eventoRepositorio;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(_eventoRepositorio.MostrarEventos());
         }
 
         public IActionResult Privacy()
