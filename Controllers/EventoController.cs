@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
 using casaDeShows.Repositorios;
 using casaDeShows.Models;
@@ -18,10 +19,12 @@ namespace casaDeShows.Controllers
             _casaDeShowRepositorio = casaDeShowRepositorio;
             _generoRepositorio = generoRepositorio;
         }
+        
         [HttpGet]
         public IActionResult NovoEventoFormulario(){
-            var generos = _generoRepositorio.MostrarGenerosEventos();
-            var casaDeShows = _casaDeShowRepositorio.MostrarCasasDeShow();
+            //var generos = _generoRepositorio.MostrarGenerosEventos();
+            //var casaDeShows = _casaDeShowRepositorio.MostrarCasasDeShow();
+            ViewBag.casaDeShows = CasaDeShowRepositorio.GetCasa().Select(c=> new SelectListItem(){Text = c.NomeCasaDeShow}).ToList();
             return View();
         }
         [HttpPost]

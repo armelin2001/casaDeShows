@@ -16,6 +16,7 @@ namespace casaDeShows.Repositorios
         public List<GeneroEvento> MostrarGenerosEventos(){
             return _dataBase.GeneroEventos.ToList();
         }
+
         public GeneroEvento BuscarGeneroEvento(int id){
             var buscaGeneroEvento = _dataBase.GeneroEventos.FirstOrDefault(genero=> genero.Id == id);
             return buscaGeneroEvento;

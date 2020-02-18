@@ -83,3 +83,5 @@ C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\casaDeShows.V
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\casaDeShows.csproj.CopyComplete
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\casaDeShows.dll
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\casaDeShows.pdb
+C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Evento\NovoEventoFormulario.cshtml.g.cs
+C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\CasaDeShow\NovaCasaDeShowFormulario.cshtml.g.cs

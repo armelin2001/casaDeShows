@@ -21,7 +21,7 @@ namespace casaDeShows.Controllers
         public ActionResult NovaCasaDeShow(CasaDeShow casa){
             if(ModelState.IsValid){
                 _casaDeShowRepositorio.AdicionarCasaDeShow(casa);
-                return RedirectToAction();
+                return RedirectToAction("Index","Home");
             }
             else{
                 return View("NovaCasaDeShowFormulario");
