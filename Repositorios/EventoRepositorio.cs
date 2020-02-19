@@ -29,10 +29,10 @@ namespace casaDeShows.Repositorios
             return buscaObjeto;
         }
         public List<Evento> MostrarEventoGenero(){
-            return _dataBase.Eventos.IdGeneroDoEvento.ToList();
+            return _dataBase.Eventos.IdGeneroDoEvento;
         }
         public List<Evento> MostrarEventoCasaDeShow(){
-            return _dataBase.Eventos.IdCasaDeShows.ToList();
+            return _dataBase.Eventos.IdCasaDeShows;
         }
         public Evento BuscarEvento(int id){
             var buscaEventoId = _dataBase.Eventos.FirstOrDefault(encontrandoEvento => encontrandoEvento.Id == id);

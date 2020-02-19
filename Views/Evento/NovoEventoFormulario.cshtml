@@ -27,8 +27,7 @@
                 <span asp-validation-for="DataEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <select asp-for="IdCasaDeShows" asp-items="@ViewBag.casaDeShows">
-                </select>
+                @Html.DropDrownList("NomeCasaDeShow",(MultiSelectList)ViewBag.casaDeShows, new{multiple="multiple"})                
             </div>
             <div class="form-group">
                 <input type="submit" id="btnsucesso" value="Create" class="btn btn-success"/>

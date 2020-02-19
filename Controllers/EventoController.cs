@@ -22,9 +22,6 @@ namespace casaDeShows.Controllers
         
         [HttpGet]
         public IActionResult NovoEventoFormulario(){
-            //var generos = _generoRepositorio.MostrarGenerosEventos();
-            //var casaDeShows = _casaDeShowRepositorio.MostrarCasasDeShow();
-            ViewBag.casaDeShows = CasaDeShowRepositorio.GetCasa().Select(c=> new SelectListItem(){Text = c.NomeCasaDeShow}).ToList();
             return View();
         }
         public ActionResult listarCasaDeShow(){
