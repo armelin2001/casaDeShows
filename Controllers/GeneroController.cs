@@ -19,9 +19,9 @@ namespace casaDeShows.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult NovoGenero(GeneroEvento genero){
+        public IActionResult NovoGenero(GeneroEvento novoGenero){
             if(ModelState.IsValid){
-                _generoRepositorio.AdicionarGenero(genero);
+                _generoRepositorio.AdicionarGenero(novoGenero);
                 return RedirectToAction();
             }
             else{
@@ -33,8 +33,8 @@ namespace casaDeShows.Controllers
             _generoRepositorio.DeletarGenero(genero);
             return RedirectToAction();
         }
-        public IActionResult MostrarGeneros(){
+        /*public IActionResult MostrarGeneros(){
             return View(_generoRepositorio.MostrarGenerosEventos());
-        }
+        }*/
     }
 }

@@ -24,7 +24,7 @@ namespace casaDeShows.Controllers
         public IActionResult NovoEventoFormulario(){
             return View();
         }
-        public ActionResult listarCasaDeShow(){
+        /*/public ActionResult listarCasaDeShow(){
             using (var db = new NorthwindEntities()){
                 var casaDeShow = db.casaDeShow.Select(c=>new{
                         NomeCasaDeShow = c.NomeCasaDeShow
@@ -32,7 +32,7 @@ namespace casaDeShows.Controllers
                 ViewBag.casaDeShow = new MultiSelectList(casaDeShow,"NomeCasaDeShow");
                 return View();
             }
-        }
+        }*/
 
         [HttpPost]
         public ActionResult NovoEvento(Evento evento){
@@ -64,11 +64,6 @@ namespace casaDeShows.Controllers
             _eventoRepositorio.DeletarEvento(evento);
             return RedirectToAction();//Avisar ao usuario que a deleççao foi feita com sucesso
         }
-        public void listarGeneros(){
-            MostrarEventoGenero();
-        }
-        public void listarCasaDeShow(){
-            MostrarCasasDeShow();
-        }
+
     }
 }

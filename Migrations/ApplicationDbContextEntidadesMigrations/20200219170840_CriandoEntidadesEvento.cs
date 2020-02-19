@@ -41,8 +41,8 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    IdCasaDeShowsId = table.Column<int>(nullable: true),
-                    IdGeneroDoEventoId = table.Column<int>(nullable: true),
+                    CasaDeShowsId = table.Column<int>(nullable: false),
+                    GeneroDoEventoId = table.Column<int>(nullable: false),
                     NomeDoEvento = table.Column<string>(nullable: false),
                     Capacidade = table.Column<int>(nullable: false),
                     PrecoIngresso = table.Column<double>(nullable: false),
@@ -52,28 +52,28 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                 {
                     table.PrimaryKey("PK_Eventos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Eventos_CasaDeShows_IdCasaDeShowsId",
-                        column: x => x.IdCasaDeShowsId,
+                        name: "FK_Eventos_CasaDeShows_CasaDeShowsId",
+                        column: x => x.CasaDeShowsId,
                         principalTable: "CasaDeShows",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Eventos_GeneroEventos_IdGeneroDoEventoId",
-                        column: x => x.IdGeneroDoEventoId,
+                        name: "FK_Eventos_GeneroEventos_GeneroDoEventoId",
+                        column: x => x.GeneroDoEventoId,
                         principalTable: "GeneroEventos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Eventos_IdCasaDeShowsId",
+                name: "IX_Eventos_CasaDeShowsId",
                 table: "Eventos",
-                column: "IdCasaDeShowsId");
+                column: "CasaDeShowsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Eventos_IdGeneroDoEventoId",
+                name: "IX_Eventos_GeneroDoEventoId",
                 table: "Eventos",
-                column: "IdGeneroDoEventoId");
+                column: "GeneroDoEventoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

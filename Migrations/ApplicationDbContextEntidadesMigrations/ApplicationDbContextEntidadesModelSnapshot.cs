@@ -45,13 +45,13 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                     b.Property<int>("Capacidade")
                         .HasColumnType("int");
 
+                    b.Property<int>("CasaDeShowsId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DataEvento")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int?>("IdCasaDeShowsId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("IdGeneroDoEventoId")
+                    b.Property<int>("GeneroDoEventoId")
                         .HasColumnType("int");
 
                     b.Property<string>("NomeDoEvento")
@@ -63,9 +63,9 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdCasaDeShowsId");
+                    b.HasIndex("CasaDeShowsId");
 
-                    b.HasIndex("IdGeneroDoEventoId");
+                    b.HasIndex("GeneroDoEventoId");
 
                     b.ToTable("Eventos");
                 });
@@ -87,13 +87,17 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
 
             modelBuilder.Entity("casaDeShows.Models.Evento", b =>
                 {
-                    b.HasOne("casaDeShows.Models.CasaDeShow", "IdCasaDeShows")
+                    b.HasOne("casaDeShows.Models.CasaDeShow", "CasaDeShow")
                         .WithMany()
-                        .HasForeignKey("IdCasaDeShowsId");
+                        .HasForeignKey("CasaDeShowsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("casaDeShows.Models.GeneroEvento", "IdGeneroDoEvento")
+                    b.HasOne("casaDeShows.Models.GeneroEvento", "GeneroEvento")
                         .WithMany()
-                        .HasForeignKey("IdGeneroDoEventoId");
+                        .HasForeignKey("GeneroDoEventoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -34,7 +34,7 @@ namespace casaDeShows
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddDbContext<ApplicationDbContextEntidades>(options=>options.UseMySql(Configuration.GetConnectionString("DefaultConnectionEntidade")));
+            services.AddDbContext<ApplicationDbContextEntidades>(options=>options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<EventoRepositorio>();
             services.AddTransient<CasaDeShowRepositorio>();
             services.AddTransient<GenerosRepositorio>();

@@ -47,8 +47,8 @@ namespace casaDeShows.Controllers
             _casaDeShowRepositorio.DeletarCasaDeShows(casa);
             return RedirectToAction();
         }
-        public IActionResult MostrarCasaDeShows(){
+        /*public IActionResult MostrarCasaDeShows(){
             return View(_casaDeShowRepositorio.MostrarCasasDeShow());
-        }
+        }*/
     }
 }

@@ -13,7 +13,6 @@ namespace casaDeShows.Models
         [Required(ErrorMessage="O genero musical deve ter 3 ou mais letras")]
         [MinLength(3)]
         public string Genero{get;set;}
-        public int EventoRefIdGenero{get;set;}
-        public Evento Evento{get;set;}
+        
     }
 }
