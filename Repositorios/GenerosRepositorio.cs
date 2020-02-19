@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.AspNetCore.Mvc.Rendering;
 namespace casaDeShows.Repositorios
 {
     public class GenerosRepositorio
@@ -28,6 +28,12 @@ namespace casaDeShows.Repositorios
         public void DeletarGenero(GeneroEvento genero){
             _dataBase.GeneroEventos.Remove(genero);
             _dataBase.SaveChanges();
+        }
+        public List<SelectListItem> GetSelectList(){
+            return _dataBase.GeneroEventos.Select(x=> new SelectListItem(){
+                Value = x.Id.ToString(),
+                Text = x.Genero
+            }).ToList();
         }
     }
 }

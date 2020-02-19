@@ -22,6 +22,8 @@ namespace casaDeShows.Controllers
         
         [HttpGet]
         public IActionResult NovoEventoFormulario(){
+            ViewBag.Generos = _generoRepositorio.GetSelectList();
+                ViewBag.CasasDeShow = _casaDeShowRepositorio.GetSelectList();
             return View();
         }
         /*/public ActionResult listarCasaDeShow(){
@@ -38,9 +40,12 @@ namespace casaDeShows.Controllers
         public ActionResult NovoEvento(Evento evento){
             if(ModelState.IsValid){
                 _eventoRepositorio.AdicionarEventos(evento);
+                
                 return RedirectToAction();//redirecionar para uma oputra tela apos o cadastro
             }
             else{
+                ViewBag.Generos = _generoRepositorio.GetSelectList();
+                ViewBag.CasasDeShow = _casaDeShowRepositorio.GetSelectList();
                 return View("NovoEventoFormulario");
             }
         }

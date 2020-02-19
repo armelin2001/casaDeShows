@@ -34,6 +34,7 @@ namespace casaDeShows.Repositorios
         public List<Evento> MostrarEventoCasaDeShow(){
             return _dataBase.Eventos.IdCasaDeShows;
         }*/
+
         public Evento BuscarEvento(int id){
             var buscaEventoId = _dataBase.Eventos.FirstOrDefault(encontrandoEvento => encontrandoEvento.Id == id);
             return buscaEventoId; 
