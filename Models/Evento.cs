@@ -4,15 +4,18 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace casaDeShows.Models
 {
     public class Evento
     {
         public int Id{get;set;}
+        [ForeignKey("EventoRefIdCasa")]
+        public ICollection<CasaDeShow> IdCasaDeShows{get;set;}//Criar um um metodo em que vai fazer uma consulta no bd para listar todas as casas de shows existentes
+        [ForeignKey("EventoRefIdGenero")]
+        public ICollection<GeneroEvento> IdGeneroDoEvento{get;set;}//fazer a mesma logica da casa de eventos
         
-        public CasaDeShow IdCasaDeShows{get;set;}//Criar um um metodo em que vai fazer uma consulta no bd para listar todas as casas de shows existentes
-        
-        public GeneroEvento IdGeneroDoEvento{get;set;}//fazer a mesma logica da casa de eventos
         [Required(ErrorMessage="O nome do evento deve ter mais de 3 letras")]
         [MinLength(3)]
         public string NomeDoEvento{get;set;}   

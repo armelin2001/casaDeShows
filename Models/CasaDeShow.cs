@@ -15,5 +15,7 @@ namespace casaDeShows.Models
         [Required(ErrorMessage="O endereço deve ter mais do que 10 letras")]
         [MinLength(10)]
         public string Endereco{get;set;}
+        public int CasaDeShowRefIdCasa{get;set;}
+        public Evento evento{get;set;}
     }
 }

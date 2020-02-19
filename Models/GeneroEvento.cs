@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace casaDeShows.Models
 {
     public class GeneroEvento
@@ -12,5 +13,7 @@ namespace casaDeShows.Models
         [Required(ErrorMessage="O genero musical deve ter 3 ou mais letras")]
         [MinLength(3)]
         public string Genero{get;set;}
+        public int EventoRefIdGenero{get;set;}
+        public Evento Evento{get;set;}
     }
 }
