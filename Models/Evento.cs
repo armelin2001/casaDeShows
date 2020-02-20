@@ -16,8 +16,6 @@ namespace casaDeShows.Models
 
         [ForeignKey("CasaDeShowsId")]
         public virtual CasaDeShow CasaDeShow { get; set; }
-
-        
         public int GeneroDoEventoId{get;set;}//fazer a mesma logica da casa de eventos
         [ForeignKey("GeneroDoEventoId")]
 
@@ -38,5 +36,11 @@ namespace casaDeShows.Models
         [DataType(DataType.Date)]
         [Display(Name="DataEvento")]
         public DateTime DataEvento{get;set;}
+
+        [Required(ErrorMessage="Digite um horaio para o evento")]
+        [DisplayFormat(DataFormatString="{HH:mm}")]
+        [DataType(DataType.Time)]
+        [Display(Name="HorariosEvento")]
+        public DateTime HorarioEvento{get;set;}
     }
 }

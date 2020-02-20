@@ -5482,26 +5482,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mathe\\.nuget\\packages\\": {}
+    "C:\\Users\\MSAD\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\casaDeShows.csproj",
+      "projectUniqueName": "C:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\casaDeShows.csproj",
       "projectName": "casaDeShows",
-      "projectPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\casaDeShows.csproj",
-      "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\obj\\",
+      "projectPath": "C:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\casaDeShows.csproj",
+      "packagesPath": "C:\\Users\\MSAD\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\MSAD\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

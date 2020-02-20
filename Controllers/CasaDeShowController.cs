@@ -15,7 +15,8 @@ namespace casaDeShows.Controllers
         }
         [HttpGet]
         public IActionResult NovaCasaDeShowFormulario(){
-            return View();
+            var listaCasa =_casaDeShowRepositorio.MostrarCasasDeShow();
+            return View(listaCasa);
         }
         [HttpPost]
         public ActionResult NovaCasaDeShow(CasaDeShow casa){
@@ -47,8 +48,5 @@ namespace casaDeShows.Controllers
             _casaDeShowRepositorio.DeletarCasaDeShows(casa);
             return RedirectToAction();
         }
-        /*public IActionResult MostrarCasaDeShows(){
-            return View(_casaDeShowRepositorio.MostrarCasasDeShow());
-        }*/
     }
 }

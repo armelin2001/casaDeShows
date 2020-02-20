@@ -24,13 +24,24 @@ namespace casaDeShows.Controllers
         public IActionResult NovoEventoFormulario(){
             ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();
             ViewBag.CasasDeShow = _casaDeShowRepositorio.ListaCasaDeShows();
+            var checarListaCasaDeshow = _casaDeShowRepositorio.ListaCasaDeShows();
+            int tamanhoLista = checarListaCasaDeshow.Count;
+            if(tamanhoLista>0){
+                return View();
+            }
+            else{
+                return View("FaltaEvento");
+            }
+        }
+        [HttpGet]
+        public IActionResult FaltaEvento(){
             return View();
         }
         [HttpPost]
         public ActionResult NovoEvento(Evento evento){
             if(ModelState.IsValid){
                 _eventoRepositorio.AdicionarEventos(evento);
-                return RedirectToAction("Index","Home");
+                 return RedirectToAction("Index","Home");
             }   
             else{
                 ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();

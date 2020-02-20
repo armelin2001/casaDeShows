@@ -54,6 +54,9 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                     b.Property<int>("GeneroDoEventoId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("HorarioEvento")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("NomeDoEvento")
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");

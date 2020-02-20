@@ -46,7 +46,8 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                     NomeDoEvento = table.Column<string>(nullable: false),
                     Capacidade = table.Column<int>(nullable: false),
                     PrecoIngresso = table.Column<double>(nullable: false),
-                    DataEvento = table.Column<DateTime>(nullable: false)
+                    DataEvento = table.Column<DateTime>(nullable: false),
+                    HorarioEvento = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -27,6 +27,11 @@
                 <span asp-validation-for="DataEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="HorarioEvento" class="control-label"></label>
+                <input type="time" asp-for="HorarioEvento" class="form-control" />
+                <span asp-validation-for="HorarioEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                     <label asp-for="CasaDeShowsId" class="control-label"></label>
                     <select asp-for="CasaDeShowsId" class="form-control" asp-items="ViewBag.CasasDeShow">
                         <option disabled selected>Casa de show</option>

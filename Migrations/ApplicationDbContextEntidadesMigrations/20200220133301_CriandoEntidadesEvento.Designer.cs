@@ -9,7 +9,7 @@ using casaDeShows.Data;
 namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
 {
     [DbContext(typeof(ApplicationDbContextEntidades))]
-    [Migration("20200219170840_CriandoEntidadesEvento")]
+    [Migration("20200220133301_CriandoEntidadesEvento")]
     partial class CriandoEntidadesEvento
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,6 +55,9 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
 
                     b.Property<int>("GeneroDoEventoId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("HorarioEvento")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("NomeDoEvento")
                         .IsRequired()

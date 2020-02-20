@@ -21,14 +21,11 @@ namespace casaDeShows.Repositorios
         public List<CasaDeShow> MostrarCasasDeShow(){
             return _dataBase.CasaDeShows.ToList();
         }
-        public static List<CasaDeShow> GetCasa(){
-            var novaListaCasas = new List<CasaDeShow>();
-            return novaListaCasas;
-        }
         public void AdicionarCasaDeShow(CasaDeShow casa){
             _dataBase.CasaDeShows.Add(casa);
             _dataBase.SaveChanges();
         }
+
         public void EditarCasaDeShow(CasaDeShow casa){
             _dataBase.CasaDeShows.Update(casa);
             _dataBase.SaveChanges();

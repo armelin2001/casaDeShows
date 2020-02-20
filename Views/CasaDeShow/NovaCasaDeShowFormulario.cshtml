@@ -1,6 +1,8 @@
 @model casaDeShows.Models.CasaDeShow
-<h3>Movie</h3>
-<hr />
+@{
+    ViewData["Title"] = "NovaCasaDeShowFormulario";
+}
+<h3>Casa de show</h3>
 <div class="row">
     <div class="col-md-5">
         <form asp-controller="CasaDeShow" asp-action="NovaCasaDeShow" method="POST">
@@ -20,4 +22,28 @@
             </div>
         </form>
     </div>
+</div>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model=>model.NomeCasaDeShow)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=>model.Endereco)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model=>model.NomeCasaDeShow)
+                </td>
+                <td>
+                    @Html.DisplayFor(model=>model.Endereco)
+                </td>
+            </tr>     
+        </tbody>
+    </table>
 </div>
