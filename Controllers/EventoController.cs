@@ -22,30 +22,19 @@ namespace casaDeShows.Controllers
         
         [HttpGet]
         public IActionResult NovoEventoFormulario(){
-            ViewBag.Generos = _generoRepositorio.GetSelectList();
-                ViewBag.CasasDeShow = _casaDeShowRepositorio.GetSelectList();
+            ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();
+            ViewBag.CasasDeShow = _casaDeShowRepositorio.ListaCasaDeShows();
             return View();
         }
-        /*/public ActionResult listarCasaDeShow(){
-            using (var db = new NorthwindEntities()){
-                var casaDeShow = db.casaDeShow.Select(c=>new{
-                        NomeCasaDeShow = c.NomeCasaDeShow
-                }).ToList();
-                ViewBag.casaDeShow = new MultiSelectList(casaDeShow,"NomeCasaDeShow");
-                return View();
-            }
-        }*/
-
         [HttpPost]
         public ActionResult NovoEvento(Evento evento){
             if(ModelState.IsValid){
                 _eventoRepositorio.AdicionarEventos(evento);
-                
-                return RedirectToAction();//redirecionar para uma oputra tela apos o cadastro
-            }
+                return RedirectToAction("Index","Home");
+            }   
             else{
-                ViewBag.Generos = _generoRepositorio.GetSelectList();
-                ViewBag.CasasDeShow = _casaDeShowRepositorio.GetSelectList();
+                ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();
+                ViewBag.CasasDeShow = _casaDeShowRepositorio.ListaCasaDeShows();
                 return View("NovoEventoFormulario");
             }
         }

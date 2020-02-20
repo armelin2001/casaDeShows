@@ -37,7 +37,7 @@ namespace casaDeShows.Repositorios
             _dataBase.CasaDeShows.Remove(casa);
             _dataBase.SaveChanges();
         }
-        public List<SelectListItem> GetSelectList(){
+        public List<SelectListItem> ListaCasaDeShows(){
             return _dataBase.CasaDeShows.Select(x=> new SelectListItem(){
                 Value = x.Id.ToString(),
                 Text = x.NomeCasaDeShow

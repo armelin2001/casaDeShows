@@ -29,7 +29,7 @@ namespace casaDeShows.Repositorios
             _dataBase.GeneroEventos.Remove(genero);
             _dataBase.SaveChanges();
         }
-        public List<SelectListItem> GetSelectList(){
+        public List<SelectListItem> PegandoListaDeGeneros(){
             return _dataBase.GeneroEventos.Select(x=> new SelectListItem(){
                 Value = x.Id.ToString(),
                 Text = x.Genero

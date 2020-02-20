@@ -33,8 +33,5 @@ namespace casaDeShows.Controllers
             _generoRepositorio.DeletarGenero(genero);
             return RedirectToAction();
         }
-        /*public IActionResult MostrarGeneros(){
-            return View(_generoRepositorio.MostrarGenerosEventos());
-        }*/
     }
 }
