@@ -1,4 +1,4 @@
-﻿@model IEnumerable<casaDeShows.Models>
+﻿@model IEnumerable<casaDeShows.Models.Evento>
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -14,9 +14,6 @@
                 </th>
                 <th>
                     Preço do Ingresso
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model=>model.CasaDeShow.NomeCasaDeShow)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model=>model.Capacidade)
@@ -41,16 +38,13 @@
                             R$ @Html.DisplayFor(modelItem=>item.PrecoIngresso)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem=>item.casaDeShows)
-                        </td>
-                        <td>
                             @Html.DisplayFor(modelItem=>item.Capacidade)
                         </td>
                         <td>
-                            <a asp-action="EditarEvento" asp-controller="Evento" asp-rout-id="@item.Id">Editar</a>
+                            <a asp-action="EditarEvento" asp-controller="Evento" asp-route-id="@item.Id">Editar</a>
                         </td>
                         <td>
-                            <a asp-action="DeletarEvento" asp-controller="Evento" asp-rout-id="@item.Id">Deletar</a>
+                            <a asp-action="DeletarEvento" asp-controller="Evento" asp-route-id="@item.Id">Deletar</a>
                         </td>
                     </tr>
                 }

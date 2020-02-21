@@ -24,6 +24,12 @@
                     <td>
                         @Html.DisplayFor(modelItem=>item.Endereco)
                     </td>
+                    <td>
+                        <a asp-action="EditarCasaDeShow" asp-controller="CasaDeShow" asp-route-id="@item.Id">Editar</a>
+                    </td>
+                    <td>
+                        <a asp-action="DeletarCasaDeShow" asp-controller="CasaDeSHow" asp-route-id="@item.Id">Deletar</a>
+                    </td>
                 </tr>     
             }
         </tbody>

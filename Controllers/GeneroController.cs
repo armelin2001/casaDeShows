@@ -15,6 +15,11 @@ namespace casaDeShows.Controllers
             _generoRepositorio = generosRepositorio;
         }
         [HttpGet]
+        public IActionResult ListarGeneros(){
+            var listaDeGeneros =  _generoRepositorio.MostrarGenerosEventos();
+            return View(listaDeGeneros);
+        }
+        [HttpGet]
         public IActionResult NovoGeneroFormulario(){
             return View();
         }
@@ -31,7 +36,22 @@ namespace casaDeShows.Controllers
         public IActionResult DeletarGenero(int id){
             var genero =  _generoRepositorio.BuscarGeneroEvento(id);
             _generoRepositorio.DeletarGenero(genero);
-            return RedirectToAction();
+            return RedirectToAction("Index","Home");
+        }
+        [HttpGet]
+        public IActionResult EditarGenero(int id){
+            var buscarGenero = _generoRepositorio.BuscarGeneroEvento(id);
+            return View(buscarGenero);
+        }
+        [HttpPost]
+        public IActionResult EditarGenero(GeneroEvento genero){
+            if(ModelState.IsValid){
+                _generoRepositorio.Editar(genero);
+                return RedirectToAction("Index","Home");
+            }
+            else{
+                return View("EditarGenero");
+            }
         }
     }
 }

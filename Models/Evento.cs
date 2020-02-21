@@ -12,12 +12,13 @@ namespace casaDeShows.Models
     {
         public int Id{get;set;}
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int CasaDeShowsId{get;set;}//Criar um um metodo em que vai fazer uma consulta no bd para listar todas as casas de shows existentes
+        [Required(ErrorMessage="Escolha uma casa de show")]
+        public int? CasaDeShowsId{get;set;}//Criar um um metodo em que vai fazer uma consulta no bd para listar todas as casas de shows existentes
 
         [ForeignKey("CasaDeShowsId")]
         public virtual CasaDeShow CasaDeShow { get; set; }
-        
-        public int GeneroDoEventoId{get;set;}//fazer a mesma logica da casa de eventos
+        [Required(ErrorMessage="Escolha um genero de evento")]
+        public int? GeneroDoEventoId{get;set;}//fazer a mesma logica da casa de eventos
         [ForeignKey("GeneroDoEventoId")]
         public virtual GeneroEvento GeneroEvento { get; set;}
 

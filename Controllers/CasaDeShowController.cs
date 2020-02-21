@@ -41,7 +41,7 @@ namespace casaDeShows.Controllers
         public IActionResult EditarCasaDeShow(CasaDeShow casa){
             if(ModelState.IsValid){
                 _casaDeShowRepositorio.EditarCasaDeShow(casa);
-                return RedirectToAction();
+                return RedirectToAction("Index","Home");
             }
             else{
                 return View("EditarCasaDeShow");
@@ -50,7 +50,7 @@ namespace casaDeShows.Controllers
         public ActionResult DeletarCasaDeShow(int id){
             var casa = _casaDeShowRepositorio.BuscarCasaDeShow(id);
             _casaDeShowRepositorio.DeletarCasaDeShows(casa);
-            return RedirectToAction();
+            return RedirectToAction("Index","Home");
         }
     }
 }

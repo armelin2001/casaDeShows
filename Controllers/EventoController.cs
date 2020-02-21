@@ -19,7 +19,10 @@ namespace casaDeShows.Controllers
             _casaDeShowRepositorio = casaDeShowRepositorio;
             _generoRepositorio = generoRepositorio;
         }
-        
+        [HttpGet]
+        public IActionResult FaltaEvento(){
+            return View();
+        }
         [HttpGet]
         public IActionResult NovoEventoFormulario(){
             ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();
@@ -32,10 +35,6 @@ namespace casaDeShows.Controllers
             else{
                 return View("FaltaEvento");
             }
-        }
-        [HttpGet]
-        public IActionResult FaltaEvento(){
-            return View();
         }
         [HttpPost]
         public ActionResult NovoEvento(Evento evento){
@@ -51,6 +50,8 @@ namespace casaDeShows.Controllers
         }
         [HttpGet]
         public IActionResult EditarEvento(int id){
+            ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();
+            ViewBag.CasasDeShow = _casaDeShowRepositorio.ListaCasaDeShows();
             var editarEvento = _eventoRepositorio.BuscarEvento(id);
             return View(editarEvento);
         }
@@ -58,7 +59,7 @@ namespace casaDeShows.Controllers
         public IActionResult EditarEvento(Evento editarEvento){
             if(ModelState.IsValid){
                 _eventoRepositorio.EditarEvento(editarEvento);
-                return RedirectToAction();//Direcionar para uma pagina onde mostre que a edição foi feita com sucesso
+                return RedirectToAction("Index","Home");
             }
             else{
                 return View("EditarEvento");
@@ -67,10 +68,8 @@ namespace casaDeShows.Controllers
         public ActionResult DeletarEvento(int id){
             var evento = _eventoRepositorio.BuscarEvento(id);
             _eventoRepositorio.ExcluiEvento(evento);
-            return RedirectToAction();//Avisar ao usuario que a deleççao foi feita com sucesso
+            return RedirectToAction("Index","Home");
         }
-        public IActionResult ComprarIngresso(){
-            
-        }
+
     }
 }

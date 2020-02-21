@@ -20501,6 +20501,11 @@
   "RootNamespace": "casaDeShows",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Genero\\EditarGenero.cshtml",
+      "TargetPath": "Views\\Genero\\EditarGenero.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Evento\\NovoEventoFormulario.cshtml",
       "TargetPath": "Views\\Evento\\NovoEventoFormulario.cshtml",
       "FileKind": "mvc"
@@ -20518,6 +20523,11 @@
     {
       "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Genero\\NovoGeneroFormulario.cshtml",
       "TargetPath": "Views\\Genero\\NovoGeneroFormulario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\CasaDeShow\\ListarCasasDeShow.cshtml",
+      "TargetPath": "Views\\CasaDeShow\\ListarCasasDeShow.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20541,6 +20551,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Evento\\EditarEvento.cshtml",
+      "TargetPath": "Views\\Evento\\EditarEvento.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\CasaDeShow\\EditarCasaDeShow.cshtml",
+      "TargetPath": "Views\\CasaDeShow\\EditarCasaDeShow.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -20553,6 +20573,11 @@
     {
       "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Genero\\ListarGeneros.cshtml",
+      "TargetPath": "Views\\Genero\\ListarGeneros.cshtml",
       "FileKind": "mvc"
     },
     {

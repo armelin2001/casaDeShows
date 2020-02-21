@@ -177,3 +177,8 @@ C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\G
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Evento\FaltaEvento.csHtml.g.cs
 C:\Users\mathe\OneDrive\Documentos\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Evento\FaltaEvento.csHtml.g.cs
 C:\Users\mathe\OneDrive\Documentos\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\CasaDeShow\ListarCasasDeShow.cshtml.g.cs
+C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\CasaDeShow\ListarCasasDeShow.cshtml.g.cs
+C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Evento\EditarEvento.cshtml.g.cs
+C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\CasaDeShow\EditarCasaDeShow.cshtml.g.cs
+C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Genero\EditarGenero.cshtml.g.cs
+C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Genero\ListarGeneros.cshtml.g.cs

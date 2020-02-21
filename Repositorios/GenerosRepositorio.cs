@@ -35,5 +35,9 @@ namespace casaDeShows.Repositorios
                 Text = x.Genero
             }).ToList();
         }
+        public void Editar(GeneroEvento genero){
+            _dataBase.GeneroEventos.Update(genero);
+            _dataBase.SaveChanges();
+        }
     }
 }
