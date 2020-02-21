@@ -14,9 +14,13 @@ namespace casaDeShows.Controllers
             _casaDeShowRepositorio = casaDeShowRepositorio;
         }
         [HttpGet]
+        public IActionResult ListarCasasDeShow(){
+            var listaDeCasas = _casaDeShowRepositorio.MostrarCasasDeShow();
+            return View(listaDeCasas);
+        }
+        [HttpGet]
         public IActionResult NovaCasaDeShowFormulario(){
-            var listaCasa =_casaDeShowRepositorio.MostrarCasasDeShow();
-            return View(listaCasa);
+            return View();
         }
         [HttpPost]
         public ActionResult NovaCasaDeShow(CasaDeShow casa){

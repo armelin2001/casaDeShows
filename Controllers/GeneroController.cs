@@ -22,7 +22,7 @@ namespace casaDeShows.Controllers
         public IActionResult NovoGenero(GeneroEvento novoGenero){
             if(ModelState.IsValid){
                 _generoRepositorio.AdicionarGenero(novoGenero);
-                return RedirectToAction();
+                return RedirectToAction("Index","Home");
             }
             else{
                 return View("NovoGeneroFormulario");

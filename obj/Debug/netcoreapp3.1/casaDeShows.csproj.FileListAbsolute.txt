@@ -175,3 +175,5 @@ C:\Users\mathe\OneDrive\Documentos\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\ca
 C:\Users\mathe\OneDrive\Documentos\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Genero\NovoGeneroFormulario.cshtml.g.cs
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Genero\NovoGeneroFormulario.cshtml.g.cs
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Evento\FaltaEvento.csHtml.g.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Evento\FaltaEvento.csHtml.g.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\CasaDeShow\ListarCasasDeShow.cshtml.g.cs

@@ -29,9 +29,12 @@ namespace casaDeShows.Repositorios
             _dataBase.Eventos.Update(editaEvento);
             _dataBase.SaveChanges();
         }
-        public void DeletarEvento(Evento deletaEvento){
+        public void ExcluiEvento(Evento deletaEvento){
             _dataBase.Eventos.Remove(deletaEvento);
             _dataBase.SaveChanges();
+        }
+        public void ComprarIngrasso(int qtd){
+            
         }
     }
 }

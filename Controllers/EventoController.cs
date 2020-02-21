@@ -66,9 +66,11 @@ namespace casaDeShows.Controllers
         }
         public ActionResult DeletarEvento(int id){
             var evento = _eventoRepositorio.BuscarEvento(id);
-            _eventoRepositorio.DeletarEvento(evento);
+            _eventoRepositorio.ExcluiEvento(evento);
             return RedirectToAction();//Avisar ao usuario que a deleççao foi feita com sucesso
         }
-
+        public IActionResult ComprarIngresso(){
+            
+        }
     }
 }

@@ -11,15 +11,15 @@ namespace casaDeShows.Models
     public class Evento
     {
         public int Id{get;set;}
-
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CasaDeShowsId{get;set;}//Criar um um metodo em que vai fazer uma consulta no bd para listar todas as casas de shows existentes
 
         [ForeignKey("CasaDeShowsId")]
         public virtual CasaDeShow CasaDeShow { get; set; }
+        
         public int GeneroDoEventoId{get;set;}//fazer a mesma logica da casa de eventos
         [ForeignKey("GeneroDoEventoId")]
-
-        public virtual GeneroEvento GeneroEvento { get; set; }
+        public virtual GeneroEvento GeneroEvento { get; set;}
 
         [Required(ErrorMessage="O nome do evento deve ter mais de 3 letras")]
         [MinLength(3)]
