@@ -14,6 +14,11 @@ namespace casaDeShows.Controllers
             _casaDeShowRepositorio = casaDeShowRepositorio;
         }
         [HttpGet]
+        public IActionResult ListarCasasDeShow(){
+            var listaDeCasas = _casaDeShowRepositorio.MostrarCasasDeShow();
+            return View(listaDeCasas);
+        }
+        [HttpGet]
         public IActionResult NovaCasaDeShowFormulario(){
             return View();
         }
@@ -21,7 +26,7 @@ namespace casaDeShows.Controllers
         public ActionResult NovaCasaDeShow(CasaDeShow casa){
             if(ModelState.IsValid){
                 _casaDeShowRepositorio.AdicionarCasaDeShow(casa);
-                return RedirectToAction();
+                return RedirectToAction("Index","Home");
             }
             else{
                 return View("NovaCasaDeShowFormulario");
@@ -36,7 +41,7 @@ namespace casaDeShows.Controllers
         public IActionResult EditarCasaDeShow(CasaDeShow casa){
             if(ModelState.IsValid){
                 _casaDeShowRepositorio.EditarCasaDeShow(casa);
-                return RedirectToAction();
+                return RedirectToAction("Index","Home");
             }
             else{
                 return View("EditarCasaDeShow");
@@ -45,10 +50,7 @@ namespace casaDeShows.Controllers
         public ActionResult DeletarCasaDeShow(int id){
             var casa = _casaDeShowRepositorio.BuscarCasaDeShow(id);
             _casaDeShowRepositorio.DeletarCasaDeShows(casa);
-            return RedirectToAction();
-        }
-        public IActionResult MostrarCasaDeShows(){
-            return View(_casaDeShowRepositorio.MostrarCasasDeShow());
+            return RedirectToAction("Index","Home");
         }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
 using casaDeShows.Repositorios;
 using casaDeShows.Models;
@@ -19,23 +20,38 @@ namespace casaDeShows.Controllers
             _generoRepositorio = generoRepositorio;
         }
         [HttpGet]
-        public IActionResult NovoEventoFormulario(){
-            var generos = _generoRepositorio.MostrarGenerosEventos();
-            var casaDeShows = _casaDeShowRepositorio.MostrarCasasDeShow();
+        public IActionResult FaltaEvento(){
             return View();
+        }
+        [HttpGet]
+        public IActionResult NovoEventoFormulario(){
+            ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();
+            ViewBag.CasasDeShow = _casaDeShowRepositorio.ListaCasaDeShows();
+            var checarListaCasaDeshow = _casaDeShowRepositorio.ListaCasaDeShows();
+            int tamanhoLista = checarListaCasaDeshow.Count;
+            if(tamanhoLista>0){
+                return View();
+            }
+            else{
+                return View("FaltaEvento");
+            }
         }
         [HttpPost]
         public ActionResult NovoEvento(Evento evento){
             if(ModelState.IsValid){
                 _eventoRepositorio.AdicionarEventos(evento);
-                return RedirectToAction();//redirecionar para uma oputra tela apos o cadastro
-            }
+                 return RedirectToAction("Index","Home");
+            }   
             else{
+                ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();
+                ViewBag.CasasDeShow = _casaDeShowRepositorio.ListaCasaDeShows();
                 return View("NovoEventoFormulario");
             }
         }
         [HttpGet]
         public IActionResult EditarEvento(int id){
+            ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();
+            ViewBag.CasasDeShow = _casaDeShowRepositorio.ListaCasaDeShows();
             var editarEvento = _eventoRepositorio.BuscarEvento(id);
             return View(editarEvento);
         }
@@ -43,7 +59,7 @@ namespace casaDeShows.Controllers
         public IActionResult EditarEvento(Evento editarEvento){
             if(ModelState.IsValid){
                 _eventoRepositorio.EditarEvento(editarEvento);
-                return RedirectToAction();//Direcionar para uma pagina onde mostre que a edição foi feita com sucesso
+                return RedirectToAction("Index","Home");
             }
             else{
                 return View("EditarEvento");
@@ -51,8 +67,8 @@ namespace casaDeShows.Controllers
         }
         public ActionResult DeletarEvento(int id){
             var evento = _eventoRepositorio.BuscarEvento(id);
-            _eventoRepositorio.DeletarEvento(evento);
-            return RedirectToAction();//Avisar ao usuario que a deleççao foi feita com sucesso
+            _eventoRepositorio.ExcluiEvento(evento);
+            return RedirectToAction("Index","Home");
         }
 
     }

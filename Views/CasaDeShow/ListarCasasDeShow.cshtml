@@ -1,0 +1,37 @@
+@model IEnumerable<casaDeShows.Models.CasaDeShow>
+@{
+    ViewData["Title"] = "ListarCasasDeShow";
+}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model=>model.NomeCasaDeShow)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=>model.Endereco)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem=>item.NomeCasaDeShow)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem=>item.Endereco)
+                    </td>
+                    <td>
+                        <a asp-action="EditarCasaDeShow" asp-controller="CasaDeShow" asp-route-id="@item.Id">Editar</a>
+                    </td>
+                    <td>
+                        <a asp-action="DeletarCasaDeShow" asp-controller="CasaDeSHow" asp-route-id="@item.Id">Deletar</a>
+                    </td>
+                </tr>     
+            }
+        </tbody>
+    </table>
+</div>

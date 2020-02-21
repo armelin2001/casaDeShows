@@ -17,18 +17,6 @@ namespace casaDeShows.Repositorios
         public List<Evento> MostrarEventos(){
             return _dataBase.Eventos.ToList();
         }
-        //Chamar o list de casa de show no controller
-        
-        //Methodos para busca de objetos 
-        public Evento BuscarGeneroDoEvento(GeneroEvento idGenero){//testar em uma view para ver se conseguimos pegar um gero de evento direto
-            var buscaGeneroDoEvento = _dataBase.Eventos.FirstOrDefault(encontraGenero => encontraGenero.IdGeneroDoEvento
-            == idGenero);
-            return buscaGeneroDoEvento;
-        }
-        public Evento BuscarObjetoCasaDeShow(CasaDeShow idCasaDeShow){
-            var buscaObjeto = _dataBase.Eventos.FirstOrDefault(encontraObjeto => encontraObjeto.IdCasaDeShows == idCasaDeShow);
-            return buscaObjeto;
-        }
         public Evento BuscarEvento(int id){
             var buscaEventoId = _dataBase.Eventos.FirstOrDefault(encontrandoEvento => encontrandoEvento.Id == id);
             return buscaEventoId; 
@@ -41,9 +29,12 @@ namespace casaDeShows.Repositorios
             _dataBase.Eventos.Update(editaEvento);
             _dataBase.SaveChanges();
         }
-        public void DeletarEvento(Evento deletaEvento){
+        public void ExcluiEvento(Evento deletaEvento){
             _dataBase.Eventos.Remove(deletaEvento);
             _dataBase.SaveChanges();
+        }
+        public void ComprarIngrasso(int qtd){
+            
         }
     }
 }

@@ -9,7 +9,7 @@ using casaDeShows.Data;
 namespace casaDeShows.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200217161435_CreateIdentitySchema")]
+    [Migration("20200219160358_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

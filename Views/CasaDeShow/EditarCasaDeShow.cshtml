@@ -1,0 +1,22 @@
+@model casaDeShows.Models.CasaDeShow
+<h3>Editar casa de show</h3>
+<div class="row">
+    <div class="col-md-5">
+        <form asp-controller="CasaDeshow" asp-action="EditarCasaDeShow" method="POST">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeCasaDeShow" class="titles"></label>
+                <input asp-for="NomeCasaDeShow" class="form-control" />
+                <span asp-validation-for="NomeCasaDeShow" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Endereco" class="control-label"></label>
+                <input asp-for="Endereco" class="form-control" />
+                <span asp-validation-for="Endereco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" id="btnsucesso" value="Create" class="btn btn-success"/>
+            </div>
+        </form>
+    </div>
+</div>

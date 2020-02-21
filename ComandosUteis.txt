@@ -1,0 +1,15 @@
+
+--> dotnet Build
+
+Build succeeded.
+    0 Error(s)
+
+Time Elapsed 00:00:03.05
+PS C:\Users\MSAD\Documents\GitHub\casaDeShows> dotnet ef migrations add CreateIdentitySchema --context ApplicationDbContext
+Build succeeded.
+The EF Core tools version '3.1.0' is older than that of the runtime '3.1.1'. Update the tools for the latest features and bug fixes.
+Done. To undo this action, use 'ef migrations remove'
+PS C:\Users\MSAD\Documents\GitHub\casaDeShows> dotnet ef migrations add CreateIdentitySchema --context ApplicationDbContextEntidades
+Build succeeded.
+The EF Core tools version '3.1.0' is older than that of the runtime '3.1.1'. Update the tools for the latest features and bug fixes.
+Done. To undo this action, use 'ef migrations remove'

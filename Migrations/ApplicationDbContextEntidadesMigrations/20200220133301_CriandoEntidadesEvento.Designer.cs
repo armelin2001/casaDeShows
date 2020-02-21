@@ -9,7 +9,7 @@ using casaDeShows.Data;
 namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
 {
     [DbContext(typeof(ApplicationDbContextEntidades))]
-    [Migration("20200217180039_CriandoEntidadesEvento")]
+    [Migration("20200220133301_CriandoEntidadesEvento")]
     partial class CriandoEntidadesEvento
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,14 +47,17 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                     b.Property<int>("Capacidade")
                         .HasColumnType("int");
 
+                    b.Property<int>("CasaDeShowsId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DataEvento")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int?>("IdCasaDeShowsId")
+                    b.Property<int>("GeneroDoEventoId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("IdGeneroDoEventoId")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("HorarioEvento")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("NomeDoEvento")
                         .IsRequired()
@@ -65,9 +68,9 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdCasaDeShowsId");
+                    b.HasIndex("CasaDeShowsId");
 
-                    b.HasIndex("IdGeneroDoEventoId");
+                    b.HasIndex("GeneroDoEventoId");
 
                     b.ToTable("Eventos");
                 });
@@ -89,13 +92,17 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
 
             modelBuilder.Entity("casaDeShows.Models.Evento", b =>
                 {
-                    b.HasOne("casaDeShows.Models.CasaDeShow", "IdCasaDeShows")
+                    b.HasOne("casaDeShows.Models.CasaDeShow", "CasaDeShow")
                         .WithMany()
-                        .HasForeignKey("IdCasaDeShowsId");
+                        .HasForeignKey("CasaDeShowsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("casaDeShows.Models.GeneroEvento", "IdGeneroDoEvento")
+                    b.HasOne("casaDeShows.Models.GeneroEvento", "GeneroEvento")
                         .WithMany()
-                        .HasForeignKey("IdGeneroDoEventoId");
+                        .HasForeignKey("GeneroDoEventoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
