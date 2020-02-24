@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using casaDeShows.Repositorios;
-using casaDeShows.Models;
+using casaDeShows.Models; 
+using Microsoft.AspNetCore.Authorization;
 namespace casaDeShows.Controllers
 {
     public class CasaDeShowController:Controller
@@ -13,11 +14,13 @@ namespace casaDeShows.Controllers
         public CasaDeShowController (CasaDeShowRepositorio casaDeShowRepositorio){
             _casaDeShowRepositorio = casaDeShowRepositorio;
         }
+        [Authorize(Policy="Usuario")]
         [HttpGet]
         public IActionResult ListarCasasDeShow(){
             var listaDeCasas = _casaDeShowRepositorio.MostrarCasasDeShow();
             return View(listaDeCasas);
         }
+        [Authorize(Policy="Usuario")]
         [HttpGet]
         public IActionResult NovaCasaDeShowFormulario(){
             return View();
@@ -32,6 +35,7 @@ namespace casaDeShows.Controllers
                 return View("NovaCasaDeShowFormulario");
             }
         }
+        [Authorize(Policy="Usuario")]
         [HttpGet]
         public IActionResult EditarCasaDeShow(int id){
             var editaCasaDeShow = _casaDeShowRepositorio.BuscarCasaDeShow(id);

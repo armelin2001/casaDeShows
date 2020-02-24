@@ -32,8 +32,15 @@ namespace casaDeShows
                 options.UseMySql(//trocando a coneção padrão de sql server para mysql 
                     //video 10 min 8 consertando bug de mysql
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>(config =>{
+                config.Password.RequireNonAlphanumeric = false;
+                config.Password.RequireUppercase = false;
+                config.Password.RequireLowercase = false;
+            })
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+                
+            services.AddAuthorization(options=>options.AddPolicy("Usuario",policy =>policy.RequireClaim("NomeUsuario","Admin")));
+            
             services.AddDbContext<ApplicationDbContextEntidades>(options=>options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<EventoRepositorio>();
             services.AddTransient<CasaDeShowRepositorio>();

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
 using casaDeShows.Repositorios;
 using casaDeShows.Models;
-
+using Microsoft.AspNetCore.Authorization;
 namespace casaDeShows.Controllers
 {
     public class EventoController:Controller
@@ -19,10 +19,12 @@ namespace casaDeShows.Controllers
             _casaDeShowRepositorio = casaDeShowRepositorio;
             _generoRepositorio = generoRepositorio;
         }
+        [Authorize(Policy="Usuario")]
         [HttpGet]
         public IActionResult FaltaEvento(){
             return View();
         }
+        [Authorize(Policy="Usuario")]
         [HttpGet]
         public IActionResult NovoEventoFormulario(){
             ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();
@@ -48,6 +50,7 @@ namespace casaDeShows.Controllers
                 return View("NovoEventoFormulario");
             }
         }
+        [Authorize(Policy="Usuario")]
         [HttpGet]
         public IActionResult EditarEvento(int id){
             ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();

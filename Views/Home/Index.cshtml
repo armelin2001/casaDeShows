@@ -40,12 +40,6 @@
                         <td>
                             @Html.DisplayFor(modelItem=>item.Capacidade)
                         </td>
-                        <td>
-                            <a asp-action="EditarEvento" asp-controller="Evento" asp-route-id="@item.Id">Editar</a>
-                        </td>
-                        <td>
-                            <a asp-action="DeletarEvento" asp-controller="Evento" asp-route-id="@item.Id">Deletar</a>
-                        </td>
                     </tr>
                 }
             </tbody>
