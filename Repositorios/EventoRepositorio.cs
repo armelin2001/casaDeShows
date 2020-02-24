@@ -33,7 +33,8 @@ namespace casaDeShows.Repositorios
             _dataBase.Eventos.Remove(deletaEvento);
             _dataBase.SaveChanges();
         }
-        public void ComprarIngrasso(int qtd){
+        public void RealizandoCompra(Evento pegandoEvento){
+            int ingresso = pegandoEvento.Capacidade;
             
         }
     }

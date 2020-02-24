@@ -20521,6 +20521,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Genero\\NovoGeneroFormulario.cshtml",
       "TargetPath": "Views\\Genero\\NovoGeneroFormulario.cshtml",
       "FileKind": "mvc"
@@ -20598,6 +20603,16 @@
     {
       "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Genero\\ListarGeneros.cshtml",
       "TargetPath": "Views\\Genero\\ListarGeneros.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
