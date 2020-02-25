@@ -15,6 +15,8 @@ namespace casaDeShows.Data
         public DbSet<Evento> Eventos{get;set;}
         public DbSet<CasaDeShow> CasaDeShows{get;set;}
         public DbSet<GeneroEvento> GeneroEventos{get;set;}
+        public DbSet<CompraEvento> CompraEventos{get;set;}
+        
         public ApplicationDbContextEntidades(DbContextOptions<ApplicationDbContextEntidades> options):base(options){
 
         }

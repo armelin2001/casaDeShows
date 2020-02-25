@@ -14,10 +14,12 @@ namespace casaDeShows.Controllers
         private readonly EventoRepositorio _eventoRepositorio;
         private readonly CasaDeShowRepositorio _casaDeShowRepositorio;
         private readonly GenerosRepositorio _generoRepositorio;
+
         public EventoController(EventoRepositorio eventoRepositorio, CasaDeShowRepositorio casaDeShowRepositorio, GenerosRepositorio generoRepositorio){
             _eventoRepositorio = eventoRepositorio;
             _casaDeShowRepositorio = casaDeShowRepositorio;
             _generoRepositorio = generoRepositorio;
+            
         }
         [Authorize(Policy="Usuario")]
         [HttpGet]
@@ -66,6 +68,30 @@ namespace casaDeShows.Controllers
             }
             else{
                 return View("EditarEvento");
+            }
+        }
+        [HttpGet]
+        public IActionResult RealizandoCompra(int id){
+            var comprarEvento = _eventoRepositorio.BuscarEvento(id);
+            return View(comprarEvento);
+        }
+        [HttpPost]
+        public IActionResult RealizandoCompra(Evento evento,CompraEvento compra){
+            int qtd = compra.QtdIngresso;
+            double preco = compra.ValorCompra;
+            if(ModelState.IsValid){
+                if(qtd<=evento.Capacidade){
+                    int cap = qtd-evento.Capacidade;
+                    double compraFinal = preco*qtd;
+                    _eventoRepositorio.FazerCompra(compra);
+                    return RedirectToAction("Index","Home");
+                }
+                else{
+                    return View("RealizandoCompra");    
+                }
+            }
+            else{
+                return View("RealizandoCompra");    
             }
         }
         public ActionResult DeletarEvento(int id){

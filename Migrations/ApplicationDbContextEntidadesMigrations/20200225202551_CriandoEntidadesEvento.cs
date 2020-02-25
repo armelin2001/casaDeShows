@@ -66,6 +66,32 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "CompraEventos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    QtdIngresso = table.Column<int>(nullable: false),
+                    ValorCompra = table.Column<double>(nullable: false),
+                    EventoId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CompraEventos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CompraEventos_Eventos_EventoId",
+                        column: x => x.EventoId,
+                        principalTable: "Eventos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CompraEventos_EventoId",
+                table: "CompraEventos",
+                column: "EventoId");
+
             migrationBuilder.CreateIndex(
                 name: "IX_Eventos_CasaDeShowsId",
                 table: "Eventos",
@@ -79,6 +105,9 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "CompraEventos");
+
             migrationBuilder.DropTable(
                 name: "Eventos");
 

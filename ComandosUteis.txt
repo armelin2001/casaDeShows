@@ -13,3 +13,9 @@ PS C:\Users\MSAD\Documents\GitHub\casaDeShows> dotnet ef migrations add CreateId
 Build succeeded.
 The EF Core tools version '3.1.0' is older than that of the runtime '3.1.1'. Update the tools for the latest features and bug fixes.
 Done. To undo this action, use 'ef migrations remove'
+
+--> dotnet tool install --global dotnet-aspnet-codegenerator --version 3.1.1
+
+--> dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 3.1.1
+
+--> dotnet aspnet-codegenerator identity -dc casadeshows.Data.AplicationDbContext --files Account.Register

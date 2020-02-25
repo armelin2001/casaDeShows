@@ -1,0 +1,39 @@
+@model casaDeShows.Models.Evento
+@{
+    ViewData["Title"]="RealizandoCompra";
+}
+<div class="row">
+    <div class="col-md-6 col-md-offset-2">
+        <form asp-controller="Evento" asp-action="RealizandoCompra" method="POST"> 
+            <div class="form-group">
+                <p>Nome do Evento</p>
+                <input disabled="" asp-for="NomeDoEvento" class="form-control" />
+                <span asp-validation-for="NomeDoEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>Preço Ingresso</p>
+                <input disabled="" type="number" asp-for="PrecoIngresso" class="form-control" />
+                <span asp-validation-for="PrecoIngresso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>Ingressos</p>
+                <input disabled="" asp-for="Capacidade" class="form-control" />
+                <span asp-validation-for="Capacidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>Data do Evento</p>
+                <input disabled="" type="date" asp-for="DataEvento" class="form-control" />
+                <span asp-validation-for="DataEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>Quantidade de Ingressos</p>
+                <input type="number" placeholder="Digite a quantidade de ingressos..." class="form-control"/>
+            </div>
+            <div class="form-group">
+                <p>Horario</p>
+                <input disabled="" type="time" asp-for="HorarioEvento" class="form-control" />
+                <span asp-validation-for="HorarioEvento" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+</div>

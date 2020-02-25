@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.AspNetCore.Mvc.Rendering;
 namespace casaDeShows.Repositorios
 {
     public class EventoRepositorio
@@ -33,9 +33,13 @@ namespace casaDeShows.Repositorios
             _dataBase.Eventos.Remove(deletaEvento);
             _dataBase.SaveChanges();
         }
-        public void RealizandoCompra(Evento pegandoEvento){
-            int ingresso = pegandoEvento.Capacidade;
-            
+        public CompraEvento FazerBuscaDeCompra(int id){
+            var buscaCompra = _dataBase.CompraEventos.FirstOrDefault(fazendoBusca => fazendoBusca.Id == id);
+            return buscaCompra;
+        }
+        public void FazerCompra(CompraEvento compra){
+            _dataBase.CompraEventos.Add(compra);
+            _dataBase.SaveChanges();
         }
     }
 }

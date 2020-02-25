@@ -9,7 +9,7 @@ using casaDeShows.Data;
 namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
 {
     [DbContext(typeof(ApplicationDbContextEntidades))]
-    [Migration("20200220133301_CriandoEntidadesEvento")]
+    [Migration("20200225202551_CriandoEntidadesEvento")]
     partial class CriandoEntidadesEvento
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,6 +38,28 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                     b.ToTable("CasaDeShows");
                 });
 
+            modelBuilder.Entity("casaDeShows.Models.CompraEvento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EventoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QtdIngresso")
+                        .HasColumnType("int");
+
+                    b.Property<double>("ValorCompra")
+                        .HasColumnType("double");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventoId");
+
+                    b.ToTable("CompraEventos");
+                });
+
             modelBuilder.Entity("casaDeShows.Models.Evento", b =>
                 {
                     b.Property<int>("Id")
@@ -47,13 +69,15 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                     b.Property<int>("Capacidade")
                         .HasColumnType("int");
 
-                    b.Property<int>("CasaDeShowsId")
+                    b.Property<int?>("CasaDeShowsId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DataEvento")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("GeneroDoEventoId")
+                    b.Property<int?>("GeneroDoEventoId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("HorarioEvento")
@@ -88,6 +112,13 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                     b.HasKey("Id");
 
                     b.ToTable("GeneroEventos");
+                });
+
+            modelBuilder.Entity("casaDeShows.Models.CompraEvento", b =>
+                {
+                    b.HasOne("casaDeShows.Models.Evento", "Evento")
+                        .WithMany()
+                        .HasForeignKey("EventoId");
                 });
 
             modelBuilder.Entity("casaDeShows.Models.Evento", b =>
