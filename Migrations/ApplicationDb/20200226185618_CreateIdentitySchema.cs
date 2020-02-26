@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace casaDeShows.Migrations
+namespace casaDeShows.Migrations.ApplicationDb
 {
     public partial class CreateIdentitySchema : Migration
     {

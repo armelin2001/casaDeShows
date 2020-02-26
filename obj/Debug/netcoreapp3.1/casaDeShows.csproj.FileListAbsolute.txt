@@ -347,3 +347,5 @@ C:\Users\mathe\OneDrive\Documentos\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Ra
 C:\Users\mathe\OneDrive\Documentos\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Genero\EditarGenero.cshtml.g.cs
 C:\Users\mathe\OneDrive\Documentos\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Genero\ListarGeneros.cshtml.g.cs
 C:\Users\mathe\OneDrive\Documentos\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Evento\RealizandoCompra.cshtml.g.cs
+C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\CompraEvento\Historico.cshtml.g.cs
+C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\CompraEvento\RealizandoCompra.cshtml.g.cs

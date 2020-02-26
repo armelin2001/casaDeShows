@@ -21,12 +21,12 @@ namespace casaDeShows.Controllers
             _generoRepositorio = generoRepositorio;
             
         }
-        [Authorize(Policy="Usuario")]
+        [Authorize(Policy="Admin")]
         [HttpGet]
         public IActionResult FaltaEvento(){
             return View();
         }
-        [Authorize(Policy="Usuario")]
+        [Authorize(Policy="Admin")]
         [HttpGet]
         public IActionResult NovoEventoFormulario(){
             ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();
@@ -52,7 +52,7 @@ namespace casaDeShows.Controllers
                 return View("NovoEventoFormulario");
             }
         }
-        [Authorize(Policy="Usuario")]
+        [Authorize(Policy="Admin")]
         [HttpGet]
         public IActionResult EditarEvento(int id){
             ViewBag.Generos = _generoRepositorio.PegandoListaDeGeneros();
@@ -68,30 +68,6 @@ namespace casaDeShows.Controllers
             }
             else{
                 return View("EditarEvento");
-            }
-        }
-        [HttpGet]
-        public IActionResult RealizandoCompra(int id){
-            var comprarEvento = _eventoRepositorio.BuscarEvento(id);
-            return View(comprarEvento);
-        }
-        [HttpPost]
-        public IActionResult RealizandoCompra(Evento evento,CompraEvento compra){
-            int qtd = compra.QtdIngresso;
-            double preco = compra.ValorCompra;
-            if(ModelState.IsValid){
-                if(qtd<=evento.Capacidade){
-                    int cap = qtd-evento.Capacidade;
-                    double compraFinal = preco*qtd;
-                    _eventoRepositorio.FazerCompra(compra);
-                    return RedirectToAction("Index","Home");
-                }
-                else{
-                    return View("RealizandoCompra");    
-                }
-            }
-            else{
-                return View("RealizandoCompra");    
             }
         }
         public ActionResult DeletarEvento(int id){

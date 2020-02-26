@@ -39,12 +39,12 @@ namespace casaDeShows
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>();
                 
-            services.AddAuthorization(options=>options.AddPolicy("Usuario",policy =>policy.RequireClaim("NomeUsuario","Admin")));
-            
+            services.AddAuthorization(options=>options.AddPolicy("Admin",policy =>policy.RequireClaim("NomeUsuario","Admin")));
             services.AddDbContext<ApplicationDbContextEntidades>(options=>options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<EventoRepositorio>();
             services.AddTransient<CasaDeShowRepositorio>();
             services.AddTransient<GenerosRepositorio>();
+            services.AddTransient<CompraEventoRepositorio>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

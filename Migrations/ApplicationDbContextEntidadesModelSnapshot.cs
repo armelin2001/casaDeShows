@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using casaDeShows.Data;
 
-namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
+namespace casaDeShows.Migrations
 {
     [DbContext(typeof(ApplicationDbContextEntidades))]
     partial class ApplicationDbContextEntidadesModelSnapshot : ModelSnapshot
@@ -42,7 +42,7 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("EventoId")
+                    b.Property<int>("EventoId")
                         .HasColumnType("int");
 
                     b.Property<int>("QtdIngresso")
@@ -116,7 +116,9 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                 {
                     b.HasOne("casaDeShows.Models.Evento", "Evento")
                         .WithMany()
-                        .HasForeignKey("EventoId");
+                        .HasForeignKey("EventoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("casaDeShows.Models.Evento", b =>

@@ -14,13 +14,13 @@ namespace casaDeShows.Controllers
         public GeneroController(GenerosRepositorio generosRepositorio){
             _generoRepositorio = generosRepositorio;
         }
-        [Authorize(Policy="Usuario")]
+        [Authorize(Policy="Admin")]
         [HttpGet]
         public IActionResult ListarGeneros(){
             var listaDeGeneros =  _generoRepositorio.MostrarGenerosEventos();
             return View(listaDeGeneros);
         }
-        [Authorize(Policy="Usuario")]
+        [Authorize(Policy="Admin")]
         [HttpGet]
         public IActionResult NovoGeneroFormulario(){
             return View();
@@ -40,7 +40,7 @@ namespace casaDeShows.Controllers
             _generoRepositorio.DeletarGenero(genero);
             return RedirectToAction("Index","Home");
         }
-        [Authorize(Policy="Usuario")]
+        [Authorize(Policy="Admin")]
         [HttpGet]
         public IActionResult EditarGenero(int id){
             var buscarGenero = _generoRepositorio.BuscarGeneroEvento(id);

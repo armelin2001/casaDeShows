@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
+namespace casaDeShows.Migrations
 {
-    public partial class CriandoEntidadesEvento : Migration
+    public partial class correcaoErro : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -74,7 +74,7 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     QtdIngresso = table.Column<int>(nullable: false),
                     ValorCompra = table.Column<double>(nullable: false),
-                    EventoId = table.Column<int>(nullable: true)
+                    EventoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -84,7 +84,7 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                         column: x => x.EventoId,
                         principalTable: "Eventos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

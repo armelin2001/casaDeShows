@@ -26,12 +26,13 @@
                         </li>
                         @if(SignInManager.IsSignedIn(User)){
                             <li class="nav-item">
-                                <a class="nav-link text-dark">Historico</a>
+                                <a class="nav-link text-dark" asp-controller="CompraEvento" asp-action="Historico">Historico</a>
                             </li>
                         }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="CasaDeShow" asp-action="ListarCasasDeShow">Ver casas de show</a>
                         </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Evento" asp-action="NovoEventoFormulario">Novo Evento</a>
                         </li>

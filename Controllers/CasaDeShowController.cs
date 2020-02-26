@@ -14,13 +14,13 @@ namespace casaDeShows.Controllers
         public CasaDeShowController (CasaDeShowRepositorio casaDeShowRepositorio){
             _casaDeShowRepositorio = casaDeShowRepositorio;
         }
-        [Authorize(Policy="Usuario")]
+        [Authorize(Policy="Admin")]
         [HttpGet]
         public IActionResult ListarCasasDeShow(){
             var listaDeCasas = _casaDeShowRepositorio.MostrarCasasDeShow();
             return View(listaDeCasas);
         }
-        [Authorize(Policy="Usuario")]
+        [Authorize(Policy="Admin")]
         [HttpGet]
         public IActionResult NovaCasaDeShowFormulario(){
             return View();
@@ -35,7 +35,7 @@ namespace casaDeShows.Controllers
                 return View("NovaCasaDeShowFormulario");
             }
         }
-        [Authorize(Policy="Usuario")]
+        [Authorize(Policy="Admin")]
         [HttpGet]
         public IActionResult EditarCasaDeShow(int id){
             var editaCasaDeShow = _casaDeShowRepositorio.BuscarCasaDeShow(id);

@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using casaDeShows.Data;
 
-namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
+namespace casaDeShows.Migrations
 {
     [DbContext(typeof(ApplicationDbContextEntidades))]
-    [Migration("20200225202551_CriandoEntidadesEvento")]
-    partial class CriandoEntidadesEvento
+    [Migration("20200226185505_correcaoErro")]
+    partial class correcaoErro
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,7 +44,7 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("EventoId")
+                    b.Property<int>("EventoId")
                         .HasColumnType("int");
 
                     b.Property<int>("QtdIngresso")
@@ -118,7 +118,9 @@ namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
                 {
                     b.HasOne("casaDeShows.Models.Evento", "Evento")
                         .WithMany()
-                        .HasForeignKey("EventoId");
+                        .HasForeignKey("EventoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("casaDeShows.Models.Evento", b =>

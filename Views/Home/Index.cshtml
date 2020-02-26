@@ -38,7 +38,7 @@
                             @Html.DisplayFor(modelItem=>item.Capacidade)
                         </td>
                         <td>
-                            <a asp-action="RealizandoCompra" asp-controller="Evento" asp-route-id="@item.Id">Comprar</a>
+                            <a asp-action="RealizandoCompra" asp-controller="CompraEvento" method="GET" asp-route-id="@item.Id">Comprar</a>
                         </td>
                     </tr>
                 }

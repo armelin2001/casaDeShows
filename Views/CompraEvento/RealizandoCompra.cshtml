@@ -1,0 +1,46 @@
+@model casaDeShows.Models.CompraEvento
+@{
+    ViewData["Title"]="RealizandoCompra";
+}
+<div class="row">
+    <div class="col-md-6 col-md-offset-2">
+        <form asp-controller="CompraEvento" asp-action="RealizandoCompra" method="POST"> 
+            <div class="form-group">
+                <p>Nome do Evento</p>
+                <input disabled="" asp-for="Evento.NomeDoEvento" class="form-control" />
+                <span asp-validation-for="Evento.NomeDoEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>Data do Evento</p>
+                <input disabled="" type="date" asp-for="Evento.DataEvento" class="form-control" />
+                <span asp-validation-for="Evento.DataEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>Horario</p>
+                <input disabled="" type="time" asp-for="Evento.HorarioEvento" class="form-control" />
+                <span asp-validation-for="Evento.HorarioEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>Preço Ingresso</p>
+                <input disabled="" type="number" asp-for="Evento.PrecoIngresso" class="form-control" />
+                <span asp-validation-for="Evento.PrecoIngresso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>Ingressos Restantes</p>
+                <input disabled="" asp-for="Evento.Capacidade" class="form-control" />
+                <span asp-validation-for="Evento.Capacidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>Quantidade de Ingressos</p>
+                <input asp-for="QtdIngresso" type="number" placeholder="Digite a quantidade de ingressos..." class="form-control"/>
+                <span asp-validation-for="QtdIngresso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>Valor total</p>
+                <input disabled="" asp-for="ValorCompra" type="number" class="form-control"/>
+                <span asp-validation-for="ValorCompra" class="text-danger"></span>
+            </div>
+            <button class="btn btn-success" type="submit">Comprar</button>
+        </form>
+    </div>
+</div>

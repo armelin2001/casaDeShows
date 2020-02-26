@@ -14,16 +14,13 @@ namespace casaDeShows.Repositorios
         public CompraEventoRepositorio(ApplicationDbContextEntidades dataBase){
             _dataBase = dataBase;
         }
-        //QtdIngresso
-        //ValorCompra
-        /*public CompraEvento FazerBuscaDeCompra(int id){
-            var buscaCompra = _dataBase.CompraEventos.FirstOrDefault(fazendoBusca => fazendoBusca.Id == id);
+        public List<CompraEvento> HistoricoDeCompras(){
+            var buscaCompra = _dataBase.CompraEventos.ToList();
             return buscaCompra;
         }
         public void FazerCompra(CompraEvento compra){
             _dataBase.CompraEventos.Add(compra);
             _dataBase.SaveChanges();
-        }*/
-
+        }
     }
 }
