@@ -11,7 +11,7 @@
 
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model=>model.Evento.NomeDoEvento)
+                    Nome do Evento
                 </th>
                 <th>
                     Data
@@ -31,6 +31,7 @@
                 @foreach(var item in Model){
                     <tr>
                         <td>
+
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem=>item.Evento.NomeDoEvento)
@@ -39,13 +40,13 @@
                             @Html.DisplayFor(modelItem=>item.Evento.DataEvento)
                         </td>
                         <td>
-                            R$ @Html.DisplayFor(modelItem=>item.Evento.CasaDeShow.Endereco)
+                            @Html.DisplayFor(modelItem=>item.Evento.CasaDeShow.NomeCasaDeShow)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem=>item.QtdIngresso)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem=>item.ValorCompra)
+                            R$ @Html.DisplayFor(modelItem=>item.ValorCompra)
                         </td>
                     </tr>
                 }

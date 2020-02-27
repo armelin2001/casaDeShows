@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace casaDeShows.Migrations
 {
-    public partial class correcaoErro : Migration
+    public partial class AdicionandoMaisAtributos : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -72,6 +72,7 @@ namespace casaDeShows.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<string>(nullable: true),
                     QtdIngresso = table.Column<int>(nullable: false),
                     ValorCompra = table.Column<double>(nullable: false),
                     EventoId = table.Column<int>(nullable: false)

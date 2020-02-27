@@ -10,6 +10,8 @@ namespace casaDeShows.Models
     public class CompraEvento
     {
         public int Id{get;set;}
+
+        public string UserId{get;set;}
         [Required]
         [Range(1,int.MaxValue,ErrorMessage="A capacidade deve ser maior que {1}")]
         public int QtdIngresso{get;set;}
@@ -20,5 +22,6 @@ namespace casaDeShows.Models
         [ForeignKey("EventoId")]
         public virtual Evento Evento{get;set;}
 
+        
     }
 }

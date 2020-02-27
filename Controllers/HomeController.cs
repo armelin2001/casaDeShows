@@ -23,7 +23,6 @@ namespace casaDeShows.Controllers
             _eventoRepositorio = eventoRepositorio;
             _userManager = userManager;
         }
-
         public IActionResult Index()
         {
             var lista = _eventoRepositorio.MostrarEventos();

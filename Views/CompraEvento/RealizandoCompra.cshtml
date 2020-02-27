@@ -1,10 +1,16 @@
 @model casaDeShows.Models.CompraEvento
+
 @{
     ViewData["Title"]="RealizandoCompra";
+
+
 }
 <div class="row">
     <div class="col-md-6 col-md-offset-2">
         <form asp-controller="CompraEvento" asp-action="RealizandoCompra" method="POST"> 
+            <div>
+                <input asp-for="Evento.Id"/>
+            </div>
             <div class="form-group">
                 <p>Nome do Evento</p>
                 <input disabled="" asp-for="Evento.NomeDoEvento" class="form-control" />
@@ -37,7 +43,7 @@
             </div>
             <div class="form-group">
                 <p>Valor total</p>
-                <input disabled="" asp-for="ValorCompra" type="number" class="form-control"/>
+                <input asp-for="ValorCompra" type="number" class="form-control"/>
                 <span asp-validation-for="ValorCompra" class="text-danger"></span>
             </div>
             <button class="btn btn-success" type="submit">Comprar</button>

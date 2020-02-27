@@ -9,8 +9,8 @@ using casaDeShows.Data;
 namespace casaDeShows.Migrations
 {
     [DbContext(typeof(ApplicationDbContextEntidades))]
-    [Migration("20200226185505_correcaoErro")]
-    partial class correcaoErro
+    [Migration("20200227161116_AdicionandoMaisAtributos")]
+    partial class AdicionandoMaisAtributos
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,6 +49,9 @@ namespace casaDeShows.Migrations
 
                     b.Property<int>("QtdIngresso")
                         .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<double>("ValorCompra")
                         .HasColumnType("double");

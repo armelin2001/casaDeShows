@@ -48,6 +48,9 @@ namespace casaDeShows.Migrations
                     b.Property<int>("QtdIngresso")
                         .HasColumnType("int");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<double>("ValorCompra")
                         .HasColumnType("double");
 
