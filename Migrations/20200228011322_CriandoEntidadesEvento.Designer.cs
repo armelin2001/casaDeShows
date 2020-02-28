@@ -9,8 +9,8 @@ using casaDeShows.Data;
 namespace casaDeShows.Migrations
 {
     [DbContext(typeof(ApplicationDbContextEntidades))]
-    [Migration("20200227161116_AdicionandoMaisAtributos")]
-    partial class AdicionandoMaisAtributos
+    [Migration("20200228011322_CriandoEntidadesEvento")]
+    partial class CriandoEntidadesEvento
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,9 +53,6 @@ namespace casaDeShows.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<double>("ValorCompra")
-                        .HasColumnType("double");
-
                     b.HasKey("Id");
 
                     b.HasIndex("EventoId");
@@ -90,8 +87,8 @@ namespace casaDeShows.Migrations
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<double>("PrecoIngresso")
-                        .HasColumnType("double");
+                    b.Property<float>("PrecoIngresso")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 

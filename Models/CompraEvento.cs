@@ -17,7 +17,8 @@ namespace casaDeShows.Models
         public int QtdIngresso{get;set;}
         [Required(ErrorMessage="O preço do ingresso deve ser maior que 0")]
         [Range(0,double.MaxValue)]
-        public double ValorCompra{get;set;}
+        public float ValorCompra{get{return QtdIngresso * Evento.PrecoIngresso;}
+        }
         public int EventoId{get;set;}
         [ForeignKey("EventoId")]
         public virtual Evento Evento{get;set;}

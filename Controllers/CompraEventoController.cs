@@ -53,7 +53,7 @@ namespace casaDeShows.Controllers
             comprar.UserId = userId; //TODO - pegar o id do usuario
             comprar.Evento = idEventoComprado;
             comprar.QtdIngresso = com.QtdIngresso;
-            comprar.ValorCompra = com.ValorCompra * com.QtdIngresso;
+            
             _compraEventoRepositorio.FazerCompra(comprar);
             return RedirectToAction("Index", "Home");
         }

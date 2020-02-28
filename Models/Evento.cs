@@ -29,9 +29,9 @@ namespace casaDeShows.Models
         [Range(1,int.MaxValue,ErrorMessage="A capacidade deve ser maior que {1}")]
         public int Capacidade{get;set;}
         [Required(ErrorMessage="O preço do ingresso deve ser maior que 0")]
-        [Range(0,double.MaxValue)]
+        [Range(0,float.MaxValue)]
         
-        public double PrecoIngresso{get;set;}
+        public float PrecoIngresso{get;set;}
         
         [Required(ErrorMessage="Selecione uma data para o evento")]
         [DisplayFormat(DataFormatString="{0:dd/MM/yyyy}")]
@@ -44,7 +44,5 @@ namespace casaDeShows.Models
         [DataType(DataType.Time)]
         [Display(Name="HorariosEvento")]
         public DateTime HorarioEvento{get;set;}
-
-
     }
 }

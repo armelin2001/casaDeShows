@@ -28,25 +28,37 @@
             </div>
             <div class="form-group">
                 <p>Preço Ingresso</p>
-                <input disabled="" type="number" asp-for="Evento.PrecoIngresso" class="form-control" />
+                <input disabled="" type="number" id="preco"  asp-for="Evento.PrecoIngresso" class="form-control" />
                 <span asp-validation-for="Evento.PrecoIngresso" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <p>Ingressos Restantes</p>
+                
                 <input disabled="" asp-for="Evento.Capacidade" class="form-control" />
                 <span asp-validation-for="Evento.Capacidade" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <p>Quantidade de Ingressos</p>
-                <input asp-for="QtdIngresso" type="number" placeholder="Digite a quantidade de ingressos..." class="form-control"/>
+                <input onchange="calculo();" asp-for="QtdIngresso" type="number" placeholder="Digite a quantidade de ingressos..." class="form-control"/>
                 <span asp-validation-for="QtdIngresso" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <p>Valor total</p>
-                <input asp-for="ValorCompra" type="number" class="form-control"/>
-                <span asp-validation-for="ValorCompra" class="text-danger"></span>
+                <label disabled="" asp-for="ValorCompra" type="number" aria-placeholder="Valor Final da compra ...." id="ValorCompra" class="form-control"></label>
             </div>
             <button class="btn btn-success" type="submit">Comprar</button>
         </form>
     </div>
 </div>
+@section Scripts{
+    <script>
+            var valorFinal = 0.00;
+            function atualiza(){
+                $("#ValorCompra").html(valorFinal);
+            }
+            function calculo(){
+                valorFinal = $("#QtdIngresso").val()*$("#Evento_Capacidade").val();
+                atualiza();
+            }
+    </script>
+}

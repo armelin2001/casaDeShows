@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace casaDeShows.Migrations
 {
-    public partial class AdicionandoMaisAtributos : Migration
+    public partial class CriandoEntidadesEvento : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -45,7 +45,7 @@ namespace casaDeShows.Migrations
                     GeneroDoEventoId = table.Column<int>(nullable: false),
                     NomeDoEvento = table.Column<string>(nullable: false),
                     Capacidade = table.Column<int>(nullable: false),
-                    PrecoIngresso = table.Column<double>(nullable: false),
+                    PrecoIngresso = table.Column<float>(nullable: false),
                     DataEvento = table.Column<DateTime>(nullable: false),
                     HorarioEvento = table.Column<DateTime>(nullable: false)
                 },
@@ -74,7 +74,6 @@ namespace casaDeShows.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<string>(nullable: true),
                     QtdIngresso = table.Column<int>(nullable: false),
-                    ValorCompra = table.Column<double>(nullable: false),
                     EventoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

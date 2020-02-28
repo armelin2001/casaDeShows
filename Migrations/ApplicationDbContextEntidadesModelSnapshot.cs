@@ -51,9 +51,6 @@ namespace casaDeShows.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<double>("ValorCompra")
-                        .HasColumnType("double");
-
                     b.HasKey("Id");
 
                     b.HasIndex("EventoId");
@@ -88,8 +85,8 @@ namespace casaDeShows.Migrations
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<double>("PrecoIngresso")
-                        .HasColumnType("double");
+                    b.Property<float>("PrecoIngresso")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
