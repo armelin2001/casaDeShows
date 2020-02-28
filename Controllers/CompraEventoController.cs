@@ -42,14 +42,24 @@ namespace casaDeShows.Controllers
             };
             return View(comprar);
         }
+        [HttpGet]
+        public IActionResult IngressosEsgotados(){
+            return View();
+        }
         [Authorize]
         [HttpPost]
         public IActionResult RealizandoCompra(CompraEvento com)
         {
 
+
             CompraEvento comprar = new CompraEvento();
             var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var idEventoComprado = _eventoRepositorio.BuscarEvento(com.Evento.Id);
+
+            if( (idEventoComprado.Capacidade-_compraEventoRepositorio.ContarIngressoVendido(com.Evento.Id) < com.QtdIngresso)){
+                return RedirectToAction("IngressosEsgotados");    
+            }
+
             comprar.UserId = userId; //TODO - pegar o id do usuario
             comprar.Evento = idEventoComprado;
             comprar.QtdIngresso = com.QtdIngresso;

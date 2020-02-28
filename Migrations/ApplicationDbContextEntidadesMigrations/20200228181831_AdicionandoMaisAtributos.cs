@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace casaDeShows.Migrations
+namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
 {
-    public partial class CriandoEntidadesEvento : Migration
+    public partial class AdicionandoMaisAtributos : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

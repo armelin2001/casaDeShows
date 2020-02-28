@@ -1,14 +1,17 @@
 @model casaDeShows.Models.Evento
 
-<h3>Movie</h3>
-<hr />
-<div class="row">
-    <div class="col-md-5">
+
+<div class="container">
+    <div class="card">
+        <h5 class="card-header h4 mb-4 text-center">
+        <strong>Novo Evento</strong>
+        </h5>
+        <div class="card-body">
         <form asp-controller="Evento" asp-action="NovoEvento" method="POST">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="NomeDoEvento" class="titles"></label>
-                <input asp-for="NomeDoEvento" class="form-control" />
+                <input asp-for="NomeDoEvento" class="form-control mb-4" />
                 <span asp-validation-for="NomeDoEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -45,9 +48,14 @@
                     </select>
                     <span asp-validation-for="GeneroDoEventoId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" id="btnsucesso" value="Create" class="btn btn-success"/>
-            </div>
+                <input type="submit" id="btnsucesso" value="Criar Evento" class="btn btn-success btn-lg btn-block"/>
+            
         </form>
+        </div>
     </div>
 </div>
+
+
+
+
+ 

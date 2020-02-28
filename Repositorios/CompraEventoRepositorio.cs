@@ -24,6 +24,10 @@ namespace casaDeShows.Repositorios
             var buscaCompra = _dataBase.CompraEventos.Include(x=> x.Evento.CasaDeShow).Where(x=>x.UserId == UserId).ToList();
             return buscaCompra;
         }
+        public int ContarIngressoVendido(int idEvento){
+            var QtdIngressoVendido = _dataBase.CompraEventos.Include(x=> x.Evento).Where(x=>x.Evento.Id==idEvento).Sum(x => x.QtdIngresso);
+            return QtdIngressoVendido;
+        }
         public void FazerCompra(CompraEvento compra){
             _dataBase.CompraEventos.Add(compra);
             _dataBase.SaveChanges();

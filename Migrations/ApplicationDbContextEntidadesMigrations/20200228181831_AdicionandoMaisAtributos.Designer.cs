@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using casaDeShows.Data;
 
-namespace casaDeShows.Migrations
+namespace casaDeShows.Migrations.ApplicationDbContextEntidadesMigrations
 {
     [DbContext(typeof(ApplicationDbContextEntidades))]
-    partial class ApplicationDbContextEntidadesModelSnapshot : ModelSnapshot
+    [Migration("20200228181831_AdicionandoMaisAtributos")]
+    partial class AdicionandoMaisAtributos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

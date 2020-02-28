@@ -3,35 +3,22 @@
     ViewData["Title"] = "ListarCasasDeShow";
 }
 <div class="container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model=>model.NomeCasaDeShow)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model=>model.Endereco)
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem=>item.NomeCasaDeShow)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem=>item.Endereco)
-                    </td>
-                    <td>
-                        <a asp-action="EditarCasaDeShow" asp-controller="CasaDeShow" asp-route-id="@item.Id">Editar</a>
-                    </td>
-                    <td>
-                        <a asp-action="DeletarCasaDeShow" asp-controller="CasaDeSHow" asp-route-id="@item.Id">Deletar</a>
-                    </td>
-                </tr>     
-            }
-        </tbody>
-    </table>
+    <div class="card-deck">
+    @foreach(var item in Model){
+        <div class="card">
+            <div class="text-center">
+                <div class="card-header">
+                    Casa de Show
+                </div>
+                <div class="card-body">
+                    <h5>Casa de show @Html.DisplayFor(modelItem=>item.NomeCasaDeShow)</h5>
+                    <p class="card-text">Endereço @Html.DisplayFor(modelItem=>item.Endereco)</p>
+                    <a class="btn btn-outline-primary" asp-action="EditarCasaDeShow" asp-controller="CasaDeShow" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-outline-danger" asp-action="EditarCasaDeShow" asp-controller="CasaDeShow" asp-route-id="@item.Id">Deletar</a>
+                </div>
+                
+            </div>
+        </div>
+    }
+    </div>
 </div>

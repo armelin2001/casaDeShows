@@ -3,46 +3,25 @@
     ViewData["Title"] = "Home Page";
 }
 <div class="container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model=>model.NomeDoEvento)
-                </th>
-                <th>
-                    Preço do Ingresso
-                </th>
-                <th>
-                    Ingressos
-                </th>
-                <th>
-
-                </th>
-            </tr>
-        </thead>
-            <tbody>
-                @foreach(var item in Model){
-                    <tr>
-                        <td>
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem=>item.NomeDoEvento)
-                        </td>
-                        <td>
-                            R$ @Html.DisplayFor(modelItem=>item.PrecoIngresso)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem=>item.Capacidade)
-                        </td>
-                        <td>
-                            <a asp-action="RealizandoCompra" asp-controller="CompraEvento" method="GET" asp-route-id="@item.Id">Comprar</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+    <div class="card-deck">
+    @foreach(var item in Model){
+            <div class="card">
+                <div class="text-center">
+                    <div class="card-header">
+                        Evento
+                    </div>
+                    <div class="card-body">
+                        <h5>Show do @Html.DisplayFor(modelItem=>item.NomeDoEvento)</h5>
+                        <p class="card-text">Preço do Ingresso R$ @Html.DisplayFor(modelItem=>item.PrecoIngresso)</p>
+                        <p class="card-text">Quantidade de Ingressos @Html.DisplayFor(modelItem=>item.Capacidade)</p>
+                        <a class="btn btn-success" asp-action="RealizandoCompra" asp-controller="CompraEvento" method="GET" asp-route-id="@item.Id">Comprar</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Data @Html.DisplayFor(modelItem=>item.DataEvento)
+                    </div>
+                </div>
+            </div>
+    }
+    </div>
 </div>
 

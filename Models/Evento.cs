@@ -30,7 +30,6 @@ namespace casaDeShows.Models
         public int Capacidade{get;set;}
         [Required(ErrorMessage="O preço do ingresso deve ser maior que 0")]
         [Range(0,float.MaxValue)]
-        
         public float PrecoIngresso{get;set;}
         
         [Required(ErrorMessage="Selecione uma data para o evento")]

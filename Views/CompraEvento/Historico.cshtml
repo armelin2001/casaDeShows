@@ -3,53 +3,22 @@
     ViewData["Title"]="Historico";
 }
 <div class="container">
-    <h2>Historico de compra</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-
-                </th>
-                <th>
-                    Nome do Evento
-                </th>
-                <th>
-                    Data
-                </th>
-                <th>
-                    Local
-                </th>
-                <th>
-                    Quantidade de ingressos comprados
-                </th>
-                <th>
-                    Total da compra
-                </th>
-            </tr>
-        </thead>
-            <tbody>
-                @foreach(var item in Model){
-                    <tr>
-                        <td>
-
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem=>item.Evento.NomeDoEvento)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem=>item.Evento.DataEvento)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem=>item.Evento.CasaDeShow.NomeCasaDeShow)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem=>item.QtdIngresso)
-                        </td>
-                        <td>
-                            R$ @Html.DisplayFor(modelItem=>item.ValorCompra)
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+    @foreach(var item in Model){
+        <div class="card">
+            <div class="text-center">
+                <div class="card-header">
+                    Evento
+                </div>
+                <div class="card-body">
+                    <h5>Show do @Html.DisplayFor(modelItem=>item.Evento.NomeDoEvento)</h5>
+                    <p class="card-text">Nome da casa @Html.DisplayFor(modelItem=>item.Evento.CasaDeShow.NomeCasaDeShow)</p>
+                    <p class="card-text">Quantidade de Ingressos comprados @Html.DisplayFor(modelItem=>item.QtdIngresso)</p>
+                    <p class="card-text">Valor gasto na compra R$ @Html.DisplayFor(modelItem=>item.ValorCompra)</p>
+                </div>
+                <div class="card-footer text-muted">
+                    Data do Evento @Html.DisplayFor(modelItem=>item.Evento.DataEvento)
+                </div>
+            </div>
+        </div>
+    }
 </div>

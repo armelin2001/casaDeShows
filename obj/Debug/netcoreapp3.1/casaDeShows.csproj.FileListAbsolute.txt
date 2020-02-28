@@ -70,7 +70,6 @@ C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\casaDeShows.T
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\casaDeShows.RazorCoreGenerate.cache
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
@@ -350,3 +349,4 @@ C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\C
 C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\CompraEvento\RealizandoCompra.cshtml.g.cs
 C:\Users\mathe\OneDrive\Documentos\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\CompraEvento\Historico.cshtml.g.cs
 C:\Users\mathe\OneDrive\Documentos\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\CompraEvento\RealizandoCompra.cshtml.g.cs
+C:\Users\MSAD\Documents\GitHub\casaDeShows\obj\Debug\netcoreapp3.1\Razor\Views\CompraEvento\IngressosEsgotados.cshtml.g.cs

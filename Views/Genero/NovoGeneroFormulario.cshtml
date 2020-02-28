@@ -1,18 +1,22 @@
 @model casaDeShows.Models.GeneroEvento
-<h3>Criar genero musical</h3>
-<hr />
-<div class="row">
-    <div class="col-md-5">
-        <form asp-controller="Genero" asp-action="NovoGenero" method="POST">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Genero" class="titles"></label>
-                <input asp-for="Genero" class="form-control" />
-                <span asp-validation-for="Genero" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" id="btnsucesso" value="Create" class="btn btn-success"/>
-            </div>
-        </form>
+
+<div class="container">
+    <div class="card">
+        <h5 class="card-header h4 mb-4 text-center">
+        <strong>Criar Um Novo Genero</strong>
+        </h5>
+        <div class="card-body">
+            <form asp-controller="Genero" asp-action="NovoGenero" method="POST">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Genero" class="titles"></label>
+                        <input class="form-control mb-4"  asp-for="Genero" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <span asp-validation-for="Genero" class="text-danger"></span>
+                        <input type="submit" id="btnsucesso" value="Criar Genero" class="btn btn-success btn-lg btn-block" />
+                    </div>
+            </form>
+        </div>
     </div>
 </div>
