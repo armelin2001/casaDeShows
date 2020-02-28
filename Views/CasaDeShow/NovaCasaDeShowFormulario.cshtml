@@ -1,0 +1,28 @@
+@model casaDeShows.Models.CasaDeShow
+@{
+    ViewData["Title"] = "NovaCasaDeShowFormulario";
+}
+<div class="container">
+    <div class="card-body">
+        <h5 class="card-header h4 mb-4 text-center">
+        <strong>Nova Casa De Show</strong>
+        </h5>
+        <div class="card-body">
+        <form asp-controller="CasaDeShow" asp-action="NovaCasaDeShow" method="POST">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeCasaDeShow" class="titles"></label>
+                <input asp-for="NomeCasaDeShow" class="form-control mb-4" />
+                <span asp-validation-for="NomeCasaDeShow" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Endereco" class="control-label"></label>
+                <input asp-for="Endereco" class="form-control mb-4" />
+                <span asp-validation-for="Endereco" class="text-danger"></span>
+            </div> 
+                <input type="submit" id="btnsucesso" value="Criar Casa" class="btn btn-success btn-lg btn-block"/>
+            
+        </form>
+        </div>
+    </div>
+</div>

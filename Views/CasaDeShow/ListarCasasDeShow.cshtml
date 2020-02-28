@@ -1,0 +1,24 @@
+@model IEnumerable<casaDeShows.Models.CasaDeShow>
+@{
+    ViewData["Title"] = "ListarCasasDeShow";
+}
+<div class="container">
+    <div class="card-deck">
+    @foreach(var item in Model){
+        <div class="card">
+            <div class="text-center">
+                <div class="card-header">
+                    Casa de Show
+                </div>
+                <div class="card-body">
+                    <h5>Casa de show @Html.DisplayFor(modelItem=>item.NomeCasaDeShow)</h5>
+                    <p class="card-text">Endereço @Html.DisplayFor(modelItem=>item.Endereco)</p>
+                    <a class="btn btn-outline-primary" asp-action="EditarCasaDeShow" asp-controller="CasaDeShow" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-outline-danger" asp-action="EditarCasaDeShow" asp-controller="CasaDeShow" asp-route-id="@item.Id">Deletar</a>
+                </div>
+                
+            </div>
+        </div>
+    }
+    </div>
+</div>

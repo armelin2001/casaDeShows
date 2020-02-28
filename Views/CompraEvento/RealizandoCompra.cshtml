@@ -1,0 +1,61 @@
+@model casaDeShows.Models.CompraEvento
+
+@{
+    ViewData["Title"]="RealizandoCompra";
+
+
+}
+ <div class="container">
+     
+    <div class="card">
+        <h5 class="card-header h4 mb-4 text-center">
+        <strong>Compra</strong>
+        </h5>
+        <div class="card-body">
+            <form asp-controller="CompraEvento" asp-action="RealizandoCompra" method="POST">
+                <input type="hidden" asp-for="Evento.Id"/>
+                <div class="form-group">
+                    Evento do <input disabled="" class="form-control mb-4" asp-for="Evento.NomeDoEvento"  />
+                    <span asp-validation-for="Evento.NomeDoEvento" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Data Evento <input disabled="" type="date" asp-for="Evento.DataEvento" class="form-control mb-4" />
+                    <span asp-validation-for="Evento.DataEvento" class="text-danger"></span>
+                </div>   
+                <div class="form-group">
+                    Horario <input disabled="" type="time" asp-for="Evento.HorarioEvento" class="form-control mb-4" />
+                    <span asp-validation-for="Evento.HorarioEvento" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Preço Ingresso<input disabled="" type="number" id="preco"  asp-for="Evento.PrecoIngresso" class="form-control mb-4" />
+                    <span asp-validation-for="Evento.PrecoIngresso" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Ingressos <input disabled="" id="ingressoCap" asp-for="Evento.Capacidade" class="form-control mb-4" />
+                     <span asp-validation-for="Evento.Capacidade" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    Quantidade de ingressos<input onchange="calculo();" asp-for="QtdIngresso" type="number" placeholder="Digite a quantidade de ingressos..." class="form-control mb-4" />
+                    <span asp-validation-for="QtdIngresso" class="text-danger"></span>
+                </div>
+                <div class="card-footer">
+                    Valor Total<label disabled="" asp-for="ValorCompra" type="number" aria-placeholder="Valor Final da compra ...." id="ValorCompra" class="form-control mb-4"></label>
+                </div>
+                <button class="btn btn-success btn-lg btn-block" type="submit">Comprar</button>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+            var valorFinal = 0.00;
+            function atualiza(){
+                $("#ValorCompra").html(valorFinal);
+            }
+            function calculo(){
+                valorFinal = $("#QtdIngresso").val()*$("#preco").val();
+                atualiza();
+            }
+
+    </script>
+}

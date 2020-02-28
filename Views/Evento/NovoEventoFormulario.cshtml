@@ -1,0 +1,61 @@
+@model casaDeShows.Models.Evento
+
+
+<div class="container">
+    <div class="card">
+        <h5 class="card-header h4 mb-4 text-center">
+        <strong>Novo Evento</strong>
+        </h5>
+        <div class="card-body">
+        <form asp-controller="Evento" asp-action="NovoEvento" method="POST">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeDoEvento" class="titles"></label>
+                <input asp-for="NomeDoEvento" class="form-control mb-4" />
+                <span asp-validation-for="NomeDoEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecoIngresso" class="control-label"></label>
+                <input type="number" asp-for="PrecoIngresso" class="form-control" />
+                <span asp-validation-for="PrecoIngresso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacidade" class="control-label"></label>
+                <input asp-for="Capacidade" class="form-control" />
+                <span asp-validation-for="Capacidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataEvento" class="control-label"></label>
+                <input type="date" asp-for="DataEvento" class="form-control" />
+                <span asp-validation-for="DataEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorarioEvento" class="control-label"></label>
+                <input type="time" asp-for="HorarioEvento" class="form-control" />
+                <span asp-validation-for="HorarioEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="CasaDeShowsId" class="control-label"></label>
+                    <select asp-for="CasaDeShowsId" class="form-control" asp-items="ViewBag.CasasDeShow">
+                        <option disabled selected>Casa de show</option>
+                    </select>
+                    <span asp-validation-for="CasaDeShowsId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="GeneroDoEventoId" class="control-label"></label>
+                    <select asp-for="GeneroDoEventoId" class="form-control" asp-items="ViewBag.Generos">
+                        <option disabled selected>Genero músical</option>
+                    </select>
+                    <span asp-validation-for="GeneroDoEventoId" class="text-danger"></span>
+            </div>
+                <input type="submit" id="btnsucesso" value="Criar Evento" class="btn btn-success btn-lg btn-block"/>
+            
+        </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+ 

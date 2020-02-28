@@ -1,0 +1,21 @@
+@model IEnumerable<casaDeShows.Models.GeneroEvento>
+
+<div class="container">
+    <div class="card-deck">
+    @foreach(var item in Model){
+        <div class="card">
+            <div class="text-center">
+                <div class="card-header">
+                    Genero
+                </div>
+                <div class="card-body">
+                    <h5>Estilo musical @Html.DisplayFor(modelItem=>item.Genero)</h5>
+                    <a class="btn btn-outline-primary" asp-action="EditarGenero" asp-controller="Genero" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-outline-danger" asp-action="DeletarGenero" asp-controller="Genero" asp-route-id="@item.Id">Deletar</a>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+</div>
+

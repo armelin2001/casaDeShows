@@ -1,0 +1,24 @@
+@model IEnumerable<casaDeShows.Models.CompraEvento>
+@{
+    ViewData["Title"]="Historico";
+}
+<div class="container">
+    @foreach(var item in Model){
+        <div class="card">
+            <div class="text-center">
+                <div class="card-header">
+                    Evento
+                </div>
+                <div class="card-body">
+                    <h5>Show do @Html.DisplayFor(modelItem=>item.Evento.NomeDoEvento)</h5>
+                    <p class="card-text">Nome da casa @Html.DisplayFor(modelItem=>item.Evento.CasaDeShow.NomeCasaDeShow)</p>
+                    <p class="card-text">Quantidade de Ingressos comprados @Html.DisplayFor(modelItem=>item.QtdIngresso)</p>
+                    <p class="card-text">Valor gasto na compra R$ @Html.DisplayFor(modelItem=>item.ValorCompra)</p>
+                </div>
+                <div class="card-footer text-muted">
+                    Data do Evento @Html.DisplayFor(modelItem=>item.Evento.DataEvento)
+                </div>
+            </div>
+        </div>
+    }
+</div>

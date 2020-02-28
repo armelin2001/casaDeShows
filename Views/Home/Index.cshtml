@@ -1,8 +1,27 @@
-﻿@{
+﻿@model IEnumerable<casaDeShows.Models.Evento>
+@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="card-deck">
+    @foreach(var item in Model){
+            <div class="card">
+                <div class="text-center">
+                    <div class="card-header">
+                        Evento
+                    </div>
+                    <div class="card-body">
+                        <h5>Show do @Html.DisplayFor(modelItem=>item.NomeDoEvento)</h5>
+                        <p class="card-text">Preço do Ingresso R$ @Html.DisplayFor(modelItem=>item.PrecoIngresso)</p>
+                        <p class="card-text">Quantidade de Ingressos @Html.DisplayFor(modelItem=>item.Capacidade)</p>
+                        <a class="btn btn-success" asp-action="RealizandoCompra" asp-controller="CompraEvento" method="GET" asp-route-id="@item.Id">Comprar</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Data @Html.DisplayFor(modelItem=>item.DataEvento)
+                    </div>
+                </div>
+            </div>
+    }
+    </div>
 </div>
+

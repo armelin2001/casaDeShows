@@ -6,13 +6,16 @@
     <title>@ViewData["Title"] - casaDeShows</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    @using Microsoft.AspNetCore.Identity
+    @inject SignInManager<IdentityUser> SignInManager
+    @inject UserManager<IdentityUser> UserManager
+
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">casaDeShows</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -21,10 +24,26 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                        </li>   
+                        @if(SignInManager.IsSignedIn(User)){
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="CompraEvento" asp-action="Historico">Historico</a>
+                            </li>
+                            @if(User.Identities.First().Claims.FirstOrDefault(x => x.Type.Equals("NomeUsuario")).Value == "Admin"){
+                                <div class="dropdown show">
+                                    <a class="nav-link text-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Casa de show
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" asp-controller="CasaDeShow" asp-action="ListarCasasDeShow">Ver casas de show</a>
+                                        <a class="dropdown-item" asp-controller="Evento" asp-action="NovoEventoFormulario">Novo Evento</a>
+                                        <a class="dropdown-item" asp-controller="CasaDeShow" asp-action="NovaCasaDeShowFormulario">Criar casa de show</a>
+                                        <a class="dropdown-item" asp-controller="Genero" asp-action="NovoGeneroFormulario">Criar novo genero</a>
+                                        <a class="dropdown-item" asp-controller="Genero" asp-action="ListarGeneros">Ver todos os generos</a>
+                                    </div>
+                                </div>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -36,11 +55,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - casaDeShows - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

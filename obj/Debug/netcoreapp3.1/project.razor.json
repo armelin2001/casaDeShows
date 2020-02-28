@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\casaDeShows.csproj",
+  "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\casaDeShows.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20501,48 +20501,143 @@
   "RootNamespace": "casaDeShows",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\CasaDeShow\\EditarCasaDeShow.cshtml",
+      "TargetPath": "Views\\CasaDeShow\\EditarCasaDeShow.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\Evento\\NovoEventoFormulario.cshtml",
+      "TargetPath": "Views\\Evento\\NovoEventoFormulario.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Shared\\_LoginPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\CompraEvento\\RealizandoCompra.cshtml",
+      "TargetPath": "Views\\CompraEvento\\RealizandoCompra.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Home\\Index.cshtml",
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\CasaDeShow\\NovaCasaDeShowFormulario.cshtml",
+      "TargetPath": "Views\\CasaDeShow\\NovaCasaDeShowFormulario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\CasaDeShow\\ListarCasasDeShow.cshtml",
+      "TargetPath": "Views\\CasaDeShow\\ListarCasasDeShow.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\Genero\\ListarGeneros.cshtml",
+      "TargetPath": "Views\\Genero\\ListarGeneros.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\Shared\\Error.cshtml",
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\MSAD\\Documents\\GitHub\\casaDeShows\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\CompraEvento\\Historico.cshtml",
+      "TargetPath": "Views\\CompraEvento\\Historico.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\Evento\\FaltaEvento.csHtml",
+      "TargetPath": "Views\\Evento\\FaltaEvento.csHtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\Genero\\NovoGeneroFormulario.cshtml",
+      "TargetPath": "Views\\Genero\\NovoGeneroFormulario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\Evento\\EditarEvento.cshtml",
+      "TargetPath": "Views\\Evento\\EditarEvento.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\Genero\\EditarGenero.cshtml",
+      "TargetPath": "Views\\Genero\\EditarGenero.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\casaDeShows\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],
